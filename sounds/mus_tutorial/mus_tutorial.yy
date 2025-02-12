@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mus_tutorial",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":192,
+  "compression":1,
+  "conversionMode":0,
+  "duration":72.789474,
+  "name":"mus_tutorial",
+  "parent":{
+    "name":"playsongs",
+    "path":"folders/Sounds/songs/playsongs.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_tutorial",
+  "type":1,
+  "volume":1.0,
+}
