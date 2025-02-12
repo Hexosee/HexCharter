@@ -55,5 +55,20 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 				break
 			}
 		break
+		case 2:
+			switch(curopt) {
+				case 0:
+					obj_chartcontroller.play_metronome = !obj_chartcontroller.play_metronome
+					var status = (obj_chartcontroller.play_metronome) ? "on" : "off"
+					alert_make("Metronome now set to " + status, false, 10)
+					menuopen = noone
+				break
+				case 1:
+					obj_chartcontroller.play_hitsounds = !obj_chartcontroller.play_hitsounds
+					var status = (obj_chartcontroller.play_hitsounds) ? "on" : "off"
+					alert_make("Hitsounds now set to " + status, false, 10)
+					menuopen = noone
+			}
+		break
 	}
 }

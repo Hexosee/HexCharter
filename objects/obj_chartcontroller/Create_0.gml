@@ -21,3 +21,11 @@ customtype = 11 // dont go into the normal notes !!
 
 // 11 and 12 are taken by the unused firework notes that were made for weeknd 4
 // add disclasimer
+
+play_metronome = false
+
+play_hitsounds = false
+hitsound_id_blacklist = [4, 5, 6, 8, 9]
+
+// to prevent repeated ticks
+last_hovered_step = 0
