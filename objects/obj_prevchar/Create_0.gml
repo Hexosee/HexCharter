@@ -13,3 +13,6 @@ paused = true
 // shader shits
 shad_targ = shader_get_uniform(sh_colorreplace, "targColor")
 shad_rep = shader_get_uniform(sh_colorreplace, "repColor")
+
+// prevent default draw code
+image_alpha = 0

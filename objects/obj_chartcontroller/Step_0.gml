@@ -12,7 +12,7 @@ if keyboard_check_pressed(vk_space) {
 		for (var i = 0; i < array_length(prevchars); i++) {
 			var prevchar = prevchars[i]
 			prevchar.paused = false
-			prevchar.image_index = sprite_get_number(prevdude.cur_anim)-1
+			prevchar.image_index = sprite_get_number(prevchar.cur_anim)-1
 		}
 	}
 	else {
@@ -24,7 +24,7 @@ if keyboard_check_pressed(vk_space) {
 			prevchar.paused = true
 			prevchar.image_blend = c_white
 			prevchar.active = false
-			prevchar.cur_anim = prevdude.idle_anim
+			prevchar.cur_anim = prevchar.idle_anim
 		}
 	}
 }
