@@ -1,5 +1,7 @@
 var b,bb,ofs 
 
+draw_rectangle_color(0,0,1280,720,obj_persistent.col_bg,obj_persistent.col_bg,obj_persistent.col_bg,obj_persistent.col_bg,false)
+
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_set_font(fnt_main)

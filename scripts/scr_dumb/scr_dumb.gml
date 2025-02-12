@@ -19,3 +19,18 @@ function alert_make(str, play_sound = true, alert_time = 30) {
 	obj.str = str
 	obj.num = instance_number(obj_alert)-1
 }
+
+
+function mouse_wheel_down_hook() {
+	if !keyboard_check(vk_control)
+		return mouse_wheel_down()
+	else
+		return false
+}
+
+function mouse_wheel_up_hook() {
+	if !keyboard_check(vk_control)
+		return mouse_wheel_up()
+	else
+		return false
+}

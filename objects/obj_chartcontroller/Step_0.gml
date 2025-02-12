@@ -1,3 +1,4 @@
+if live_call() return live_result
 var s
 if keyboard_check(vk_shift)
 	s = mscroll*2	
@@ -17,10 +18,10 @@ if keyboard_check_pressed(vk_space) {
 
 var mx = floor(mouse_x/35)
 if paused {
-	if (mouse_wheel_down() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
+	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
 		y-=s
 	
-	if (mouse_wheel_up() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
+	if (mouse_wheel_up_hook() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
 		y+=s
 		
 	if keyboard_check_pressed(ord("D")) 
@@ -30,7 +31,24 @@ if paused {
 		y = (ceil((y+1)/(s*16))) * (s*16)
 }
 else
-	if (mouse_wheel_down() or keyboard_check_pressed(vk_down) or mouse_wheel_up() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) { audio_pause_sound(songplaying); paused = true; last_hovered_step = -1 }
+	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down) or mouse_wheel_up_hook() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) { audio_pause_sound(songplaying); paused = true; last_hovered_step = -1 }
+
+// zooming
+if mouse_wheel_down() and keyboard_check(vk_control) 
+	zoom-=0.2
+
+
+if mouse_wheel_up() and keyboard_check(vk_control) 
+	zoom+=0.2
+
+zoom = clamp(zoom,1,2)
+zlerp = lerp(zlerp,zoom,0.02)
+
+var camw = camera_get_view_width(view_camera[0])
+var camh = camera_get_view_height(view_camera[0])
+
+camera_set_view_size(view_camera[0],1280/zlerp,720/zlerp)
+camera_set_view_pos(view_camera[0],1280/2-camw/2,-zlerp) // might be srtupid whoops
 
 if paused
 	audio_sound_set_track_position(songplaying,-((y*60) / bpm / 4) / 32)
@@ -39,16 +57,16 @@ else {
 	
 	if floor(y/s) != last_hovered_step {
 		var steppos = (floor(y/s)+1)
-		show_debug_message(steppos)
+		print(steppos)
 		// metronome
 		// TODO: customizable sounds? maybe do this when palettes are implemented
 		if play_metronome {
 			if steppos % 16 == 0 {
-				show_debug_message("section hit")
+				print("section hit")
 				audio_play_sound(snd_metroup_default, 9999, 0)
 			} else if steppos % 4 == 0 {
 				audio_play_sound(snd_metrodown_default, 9999, 0)
-				show_debug_message("beat hit")
+				print("beat hit")
 			}
 		}
 			 
@@ -56,7 +74,7 @@ else {
 		if play_hitsounds {
 			for (var bb = 0; bb < keys*2; bb++) {
 				if notes[bb,abs(steppos)] != 0 and not array_contains(hitsound_id_blacklist, notes[bb, abs(steppos)]) {
-					show_debug_message("dats a note")
+					print("dats a note")
 					audio_play_sound(snd_hitsound_default, 9999, 0)
 				}
 			}
@@ -76,8 +94,10 @@ for (num = 0; num <= 9; num++)
 			y = -(num * 0.1 * (audio_sound_length(songplaying)/60)*bpm * 4  * 32)
 	}
 }
-y=-clamp(-y,0,infinity)
+// point and laugh
+//y=-clamp(-y,0,infinity)
 
+y=min(y,0)
 
 curb = floor(((mouse_y-y))/32)-3
 
@@ -114,10 +134,10 @@ var mx = mouse_x
 var my = mouse_y
 if (mx > 5 and mx < 320+5) and (my > 675 and my < 715) {
 	
-	if (mouse_wheel_down() or keyboard_check_pressed(vk_down))
+	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down))
 		customtype -= 1
 		
-	if (mouse_wheel_up() or keyboard_check_pressed(vk_up))
+	if (mouse_wheel_up_hook() or keyboard_check_pressed(vk_up))
 		customtype += 1	
 		
 	customtype = clamp(customtype,11,infinity)

@@ -20,7 +20,9 @@ center = (room_width/2-keys*32)-keys
 customtype = 11 // dont go into the normal notes !!
 
 // 11 and 12 are taken by the unused firework notes that were made for weeknd 4
-// add disclasimer
+
+zoom = 1
+zlerp = 1
 
 play_metronome = false
 
