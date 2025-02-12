@@ -1,4 +1,3 @@
-if live_call() return live_result
 draw_set_alpha(0.7)
 	draw_rectangle_color(0,0,1280,35,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,false)
 draw_set_alpha(1)
