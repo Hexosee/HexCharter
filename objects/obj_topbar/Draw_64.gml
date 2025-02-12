@@ -1,3 +1,4 @@
+if live_call() return live_result
 draw_set_alpha(0.7)
 	draw_rectangle_color(0,0,1280,35,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,false)
 draw_set_alpha(1)
@@ -15,9 +16,12 @@ for (var i = 0; i<length; i++) {
 	draw_text(8+wold+pold,1,keys[i])
 	wid+= string_width(keys[i])
 	pad+=16
-	if mouse_x > wold+pold and mouse_x < wid+pad {
+	
+	
+	if MOUSE_X > wold+pold and MOUSE_X < wid+pad {
 		curcat = i	
 	}
+	
 	if i == curcat and inrange {
 		draw_set_alpha(0.5)
 			draw_rectangle_color(wold+pold+1,0,wid+pad,35,c_white,c_white,c_white,c_white,false)

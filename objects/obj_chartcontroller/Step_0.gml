@@ -1,4 +1,3 @@
-if live_call() return live_result
 var s
 if keyboard_check(vk_shift)
 	s = mscroll*2	
@@ -18,10 +17,10 @@ if keyboard_check_pressed(vk_space) {
 
 var mx = floor(mouse_x/35)
 if paused {
-	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
 		y-=s
 	
-	if (mouse_wheel_up_hook() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_up() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
 		y+=s
 		
 	if keyboard_check_pressed(ord("D")) 
@@ -31,7 +30,7 @@ if paused {
 		y = (ceil((y+1)/(s*16))) * (s*16)
 }
 else
-	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down) or mouse_wheel_up_hook() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) { audio_pause_sound(songplaying); paused = true; last_hovered_step = -1 }
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) { audio_pause_sound(songplaying); paused = true; last_hovered_step = -1 }
 
 // zooming
 if mouse_wheel_down() and keyboard_check(vk_control) 

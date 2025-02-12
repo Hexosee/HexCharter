@@ -20,17 +20,20 @@ function alert_make(str, play_sound = true, alert_time = 30) {
 	obj.num = instance_number(obj_alert)-1
 }
 
-
-function mouse_wheel_down_hook() {
+function is_scrolling_down() {
 	if !keyboard_check(vk_control)
 		return mouse_wheel_down()
 	else
 		return false
 }
 
-function mouse_wheel_up_hook() {
+function is_scrolling_up() {
 	if !keyboard_check(vk_control)
 		return mouse_wheel_up()
 	else
 		return false
 }
+
+
+#macro MOUSE_X device_mouse_x_to_gui(0)
+#macro MOUSE_Y device_mouse_y_to_gui(0)

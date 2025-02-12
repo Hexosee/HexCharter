@@ -1,11 +1,10 @@
 //curcat = floor(mouse_x/80)
 //curcat = clamp(curcat,0,array_length(keys)-1)
 
-curopt = floor(mouse_y/20)-2
+curopt = floor(MOUSE_Y/20)-2
 curopt = clamp(curopt,0,array_length(menuopen)-1)
 
-inrange = (mouse_y < 35 and mouse_y > 0) and (mouse_x < barwidth[array_length(barwidth)-1] and mouse_x > 0)
-
+inrange = (MOUSE_Y < 35 and MOUSE_Y > 0) and (MOUSE_X < barwidth[array_length(barwidth)-1] and MOUSE_X > 0)
 if inrange and mouse_check_button_pressed(mb_left) {
 	
 	if curcat == selected {
@@ -19,7 +18,7 @@ if inrange and mouse_check_button_pressed(mb_left) {
 	
 }
 
-inrange2 = (mouse_y > 40 and mouse_y < 60+((array_length(menuopen)-1)*20)-1) and (mouse_x > selected*80+5 and mouse_x < (selected*80)+11+width)
+inrange2 = (MOUSE_Y > 40 and MOUSE_Y < 60+((array_length(menuopen)-1)*20)-1) and (MOUSE_X > selected*80+5 and MOUSE_X < (selected*80)+11+width)
 
 if inrange2 and mouse_check_button_pressed(mb_left) {
 	switch (curcat) { // switchception.
