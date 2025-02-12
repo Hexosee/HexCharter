@@ -30,19 +30,41 @@ for (bb = 0; bb < k; bb++)
 		var notex = center+ofs+bb*32 // why do i need to add 1 to align it
 		var notey = 100+b*32+sd2
 		
-		var col 
-		if bb % 2 == 0 {
-			if b % 2 == 0
-				col = obj_persistent.col_grid2
-			else
-				col = obj_persistent.col_grid1
-		}
-		else {
-			if b % 2 == 0
-				col = obj_persistent.col_grid1
-			else
-				col = obj_persistent.col_grid2
-		}
+		var col = noone
+		
+		var colors = [
+			// onbeats (section A)
+			obj_persistent.col_grid1, 
+			obj_persistent.col_grid2, 
+			
+			// offbeats (section A)
+			obj_persistent.col_grid1_offbeat,
+			obj_persistent.col_grid2_offbeat,
+			
+			// onbeats (section B)
+			obj_persistent.col_grid1_b,
+			obj_persistent.col_grid2_b,
+			
+			// offbeats (section B)
+			obj_persistent.col_grid1_offbeat_b,
+			obj_persistent.col_grid2_offbeat_b
+		]
+		
+		var beatmod = (floor(b / 4) % 2) - 1
+		if beatmod >= 0 // make sure its in the range 1 - 2 (if it should be applied)
+			beatmod += 2
+		beatmod = max(0, beatmod) // reclamp so no negative values
+		
+		var sectionmod = (floor(b / 16) % 2) - 1
+		if sectionmod >= 0 // keep range again (this time either 0 or 1)
+			sectionmod ++
+		sectionmod = max(0, sectionmod) // reclamp
+		sectionmod *= 4 // scale up so the idx is correctly shifted
+		
+		
+		// this is the easy part!
+		col = colors[abs(b % 2 - bb % 2) + beatmod + sectionmod]
+		
 				
 		draw_rectangle_color(notex,notey,notex+31,notey+31,col,col,col,col,false)
 		

@@ -11,9 +11,11 @@ function transition_goto(roomto) {
 	obj.roomto = roomto
 }
 
-function alert_make(str) {
-	audio_play_sound(snd_josh,0,false)
+function alert_make(str, play_sound = true, alert_time = 30) {
+	if play_sound
+		audio_play_sound(snd_josh,0,false)
 	var obj = instance_create_depth(0,0,0,obj_alert)	
+	obj.alarm[0] = alert_time/(60/game_get_speed(gamespeed_fps))
 	obj.str = str
 	obj.num = instance_number(obj_alert)-1
 }

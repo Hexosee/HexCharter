@@ -34,6 +34,7 @@ draw_set_alpha(1)
 // CREDITS
 draw_set_halign(fa_right)
 draw_set_font(fnt_main)
-draw_text(room_width-5,room_height-60,"made by hexose")
+draw_text(room_width-5,room_height-80,"made by hexose")
+draw_text(room_width-5,room_height-60,"some contributions by kayla")
 draw_text(room_width-5,room_height-40,"delta by gm-core")
 draw_text(room_width-5,room_height-20,"inspired by codename engine (lols)")
