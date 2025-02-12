@@ -57,3 +57,9 @@ Temporary Items
 # GameMaker temporary files
 *.resource_order
 *.old
+
+# GMLIVE!!!
+datafiles/GMLive/*
+extensions/GMLive_fallback/*
+scripts/GMLive*/
+objects/obj_gmlive/*
