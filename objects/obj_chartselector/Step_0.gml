@@ -1,9 +1,9 @@
 // might make this more mouse controlled another time idk
 
-if keyboard_check_pressed(vk_up) or mouse_wheel_up_hook()
+if keyboard_check_pressed(vk_up) or mouse_wheel_up()
 	sel--
 	
-if keyboard_check_pressed(vk_down) or mouse_wheel_down_hook()
+if keyboard_check_pressed(vk_down) or mouse_wheel_down()
 	sel++
 	
 /*

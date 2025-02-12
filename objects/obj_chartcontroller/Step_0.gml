@@ -34,11 +34,11 @@ else
 
 // zooming
 if mouse_wheel_down() and keyboard_check(vk_control) 
-	zoom-=0.2
+	zoom-=0.1
 
 
 if mouse_wheel_up() and keyboard_check(vk_control) 
-	zoom+=0.2
+	zoom+=0.1
 
 zoom = clamp(zoom,1,2)
 zlerp = lerp(zlerp,zoom,0.02)
@@ -133,10 +133,10 @@ var mx = mouse_x
 var my = mouse_y
 if (mx > 5 and mx < 320+5) and (my > 675 and my < 715) {
 	
-	if (mouse_wheel_down_hook() or keyboard_check_pressed(vk_down))
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down))
 		customtype -= 1
 		
-	if (mouse_wheel_up_hook() or keyboard_check_pressed(vk_up))
+	if (is_scrolling_up() or keyboard_check_pressed(vk_up))
 		customtype += 1	
 		
 	customtype = clamp(customtype,11,infinity)
