@@ -9,19 +9,19 @@
     
     // light
     "col_grid1" : [69,71,90],
-    "col_grid1_offbeat" : [127,132,156],
+    "col_grid1_offbeat" : [81, 77, 99],
 
     // offsection
     // surface 2 and overlay 0
-    "col_grid1_b" : [88,91,112],
-    "col_grid1_offbeat_b" : [108,112,134],
+    "col_grid1_b" : [86, 88, 114],
+    "col_grid1_offbeat_b" : [99, 95, 122],
 
     // dark
-    "col_grid2" : [49,50,68],
-    "col_grid2_offbeat" : [147,153,178],
+    "col_grid2" : [49, 50, 68],
+    "col_grid2_offbeat" : [63, 58, 86],
 
     // offsection
-    "col_grid2_b" : [0,0,0],
-    "col_grid2_offbeat_b" : [0,0,0],
+    "col_grid2_b" : [70, 73, 107],
+    "col_grid2_offbeat_b" : [78, 71, 112],
     
 }
