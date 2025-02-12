@@ -8,10 +8,24 @@ if keyboard_check_pressed(vk_space) {
 	if paused {
 		audio_resume_sound(songplaying)	
 		paused = false
+		
+		for (var i = 0; i < array_length(prevchars); i++) {
+			var prevchar = prevchars[i]
+			prevchar.paused = false
+			prevchar.image_index = sprite_get_number(prevdude.cur_anim)-1
+		}
 	}
 	else {
 		audio_pause_sound(songplaying)	
 		paused = true
+		
+		for (var i = 0; i < array_length(prevchars); i++) {
+			var prevchar = prevchars[i]
+			prevchar.paused = true
+			prevchar.image_blend = c_white
+			prevchar.active = false
+			prevchar.cur_anim = prevdude.idle_anim
+		}
 	}
 }
 
@@ -30,7 +44,15 @@ if paused {
 		y = (ceil((y+1)/(s*16))) * (s*16)
 }
 else
-	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) { audio_pause_sound(songplaying); paused = true; last_hovered_step = -1 }
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
+	{ 
+		audio_pause_sound(songplaying);
+		paused = true;
+		last_hovered_step = -1
+		
+		prevdude.paused = true
+		prevbadguy.paused = true
+	}
 
 // zooming
 if mouse_wheel_down() and keyboard_check(vk_control) 
@@ -56,26 +78,58 @@ else {
 	
 	if floor(y/s) != last_hovered_step {
 		var steppos = (floor(y/s)+1)
-		print(steppos)
 		// metronome
 		// TODO: customizable sounds? maybe do this when palettes are implemented
-		if play_metronome {
-			if steppos % 16 == 0 {
-				print("section hit")
+		if steppos % 16 == 0 {
+			if play_metronome
 				audio_play_sound(snd_metroup_default, 9999, 0)
-			} else if steppos % 4 == 0 {
+			
+			for (var i = 0; i < array_length(prevchars); i++) {
+				var prevchar = prevchars[i]
+				if !prevchar.paused and !prevchar.active {
+					prevchar.cur_anim = prevchar.idle_anim
+					prevchar.image_index = 0
+					prevchar.image_blend = c_white
+				}
+			}
+		} else if steppos % 4 == 0 {
+			if play_metronome
 				audio_play_sound(snd_metrodown_default, 9999, 0)
-				print("beat hit")
+				
+			for (var i = 0; i < array_length(prevchars); i++) {
+				var prevchar = prevchars[i]
+				if !prevchar.paused and !prevchar.active {
+					prevchar.cur_anim = prevchar.idle_anim
+					prevchar.image_index = 0
+					prevchar.image_blend = c_white
+				}
 			}
 		}
 			 
 		// hitsounds
-		if play_hitsounds {
-			for (var bb = 0; bb < keys*2; bb++) {
-				if notes[bb,abs(steppos)] != 0 and not array_contains(hitsound_id_blacklist, notes[bb, abs(steppos)]) {
-					print("dats a note")
-					audio_play_sound(snd_hitsound_default, 9999, 0)
+		for (var bb = 0; bb < keys*2; bb++) {
+			var this_note_idx = min(abs(steppos), songlong-1)
+			var this_note = notes[bb,this_note_idx]
+			
+			if this_note != 0 and not array_contains(hitsound_id_blacklist, this_note) {
+				if bb >= keys {
+					// its a duuuude note
+					if this_note == 1 {
+						prevdude.cur_anim = prevdude.anims[bb%4]
+						prevdude.image_index = 0
+						prevdude.image_blend = notecollist[bb%4]
+					}
+				} else {
+					// its a baaaadguy note
+					if this_note == 1 {
+						prevbadguy.cur_anim = prevbadguy.anims[bb%4]
+						prevbadguy.image_index = 0
+						prevbadguy.image_blend = notecollist[bb%4]
+					}
 				}
+					
+				if play_hitsounds
+					audio_play_sound(snd_hitsound_default, 9999, 0)
 			}
 		}
 		last_hovered_step = floor(y/s)

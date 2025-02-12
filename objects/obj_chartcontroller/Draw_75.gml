@@ -30,3 +30,5 @@ if mx == 8 and customtype <= 12 and fuck {
 	draw_text(10,600,"Note types 11 and 12 are taken by unused firework notes!!\nYou should remove the code for them in\nobj_note's step event if you're planning to use them.")
 }
 
+
+draw_sprite_ext(spr_previewplatform,0,center/2, room_height*.8,1,1,0,c_white,1)
