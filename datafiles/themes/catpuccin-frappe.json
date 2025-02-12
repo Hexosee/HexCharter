@@ -1,0 +1,27 @@
+{
+
+    // https://catppuccin.com/palette
+
+    "author" : "hexose",
+
+    "col_bg" : [30,30,46],
+    "col_overlay" : [17,17,27],
+    
+    // light
+    "col_grid1" : [69,71,90],
+    "col_grid1_offbeat" : [127,132,156],
+
+    // offsection
+    // surface 2 and overlay 0
+    "col_grid1_b" : [88,91,112],
+    "col_grid1_offbeat_b" : [108,112,134],
+
+    // dark
+    "col_grid2" : [49,50,68],
+    "col_grid2_offbeat" : [147,153,178],
+
+    // offsection
+    "col_grid2_b" : [0,0,0],
+    "col_grid2_offbeat_b" : [0,0,0],
+    
+}

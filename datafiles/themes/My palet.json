@@ -1,0 +1,24 @@
+{
+
+    "author" : "test",
+
+    "col_bg" : [255, 255, 0],
+    "col_overlay" : [17, 17, 27],
+    
+    // light
+    "col_grid1" : [255, 71, 210],
+    "col_grid1_offbeat" : [108,112,134],
+
+    // offsection
+    "col_grid1_b" : [88, 91, 112],
+    "col_grid1_offbeat_b" : [127,132,156],
+
+    // dark
+    "col_grid2" : [49, 50, 68],
+    "col_grid2_offbeat" : [63, 58, 86],
+
+    // offsection
+    "col_grid2_b" : [70, 73, 107],
+    "col_grid2_offbeat_b" : [78, 71, 112]
+    
+}

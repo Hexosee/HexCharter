@@ -46,6 +46,8 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"chart.swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"chart.swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"song.ogg","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"song.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"catpuccin-frappe.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"catpuccin-frappe.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"My palet.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"My palet.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -79,6 +81,7 @@
     {"id":{"name":"scr_dumb","path":"scripts/scr_dumb/scr_dumb.yy",},},
     {"id":{"name":"scr_playteststuff","path":"scripts/scr_playteststuff/scr_playteststuff.yy",},},
     {"id":{"name":"sh_colorreplace","path":"shaders/sh_colorreplace/sh_colorreplace.yy",},},
+    {"id":{"name":"scr_themes","path":"scripts/scr_themes/scr_themes.yy",},},
     {"id":{"name":"mus_arkaid","path":"sounds/mus_arkaid/mus_arkaid.yy",},},
     {"id":{"name":"mus_tutorial","path":"sounds/mus_tutorial/mus_tutorial.yy",},},
     {"id":{"name":"snd_dwuh","path":"sounds/snd_dwuh/snd_dwuh.yy",},},

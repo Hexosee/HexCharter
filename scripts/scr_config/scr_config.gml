@@ -1,38 +1,37 @@
-#macro SAVES obj_persistent.saves
+// ripped from glob adventure
+#macro CONFIG obj_persistent.config
 
 function config_load() {
 	with (obj_persistent) {
-		if file_exists("saves.json") {
-			var file = file_text_open_read("saves.json")
+		if file_exists(game_save_id+"config.json") {
+			var file = file_text_open_read(game_save_id+"/config.json")
 				var json = file_text_read_string(file)
 			file_text_close(file)
 		
 		
 			var conf = json_parse(json)
-			SAVES = conf
-			if SAVES.ver != saves_ORIG.ver {
+			CONFIG = conf
+			if CONFIG.ver != config_ORIG.ver {
 				
-				SAVES = struct_merge(SAVES,saves_ORIG,false)
+				CONFIG = struct_merge(CONFIG,config_ORIG,false)
 				show_debug_message("savedata merged!")
 			}
 
 	
-			//printf("config","config loaded :3")
 		}
-			//printf("config","baby's first glob adventure")
 	}
 }
 
 
 function config_save() {
+	print("SAVING!!")
 	with (obj_persistent) {
-		var json = json_stringify(SAVES,false) // sorry pretty print fans.. i'm LAZY.
+		var json = json_stringify(CONFIG,false) // sorry pretty print fans.. i'm LAZY.
 	
-		var file = file_text_open_write("config.json")
+		var file = file_text_open_write(game_save_id+"/config.json")
 			file_text_write_string(file,json)
 		file_text_close(file)
 	
-		//printf("config","config saved :3")
 	}
 }
 

@@ -1,4 +1,4 @@
-// theming?
+// theming
 col_bg = make_color_rgb(30, 30, 46)
 col_overlay = make_color_rgb(17, 17, 27)
 
@@ -18,6 +18,20 @@ col_grid2_offbeat_b = make_color_rgb(78, 71, 112)
 
 thischart = ""
 creating = false
+
+config = {
+	ver:"1.0",
+	charter: {
+		curtheme: "catpuccin-mocha",
+	}
+	
+}
+
+config_ORIG = config
+
+config_load()
+theme_load(config.charter.curtheme)
+
 
 // playtesting
 downscroll = false
