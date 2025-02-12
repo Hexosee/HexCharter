@@ -1,6 +1,6 @@
 function theme_load(themeto) {
-	if file_exists($"{program_directory}/themes/{themeto}.json") {
-		var file = file_text_open_read($"{program_directory}/themes/{themeto}.json")
+	if file_exists($"{working_directory}themes/{themeto}.json") {
+		var file = file_text_open_read($"{working_directory}themes/{themeto}.json")
 		var json = "" 
 	
 		while (!file_text_eof(file)) {
