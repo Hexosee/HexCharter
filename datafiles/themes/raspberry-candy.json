@@ -1,0 +1,24 @@
+{
+
+    "author" : "kayla",
+
+    "col_bg" : [51,22,56],
+    "col_overlay" : [31,21,38],
+    
+    // light
+    "col_grid1" : [107,66,145],
+    "col_grid1_offbeat" : [124, 79, 142],
+
+    // offsection
+    "col_grid1_b" : [143, 84, 173],
+    "col_grid1_offbeat_b" : [180, 138, 216],
+
+    // dark
+    "col_grid2" : [99, 44, 109],
+    "col_grid2_offbeat" : [118, 58, 119],
+
+    // offsection
+    "col_grid2_b" : [119, 64, 150],
+    "col_grid2_offbeat_b" : [163, 98, 173],
+    
+}
