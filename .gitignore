@@ -58,6 +58,8 @@ Temporary Items
 *.resource_order
 *.old
 
+builds/*
+
 # GMLIVE!!!
 datafiles/GMLive/*
 extensions/GMLive_fallback/*
