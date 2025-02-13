@@ -22,8 +22,8 @@ void main()
 	bool isTargColor = distance(base.rgb, targColor) < 0.2;
 	
 	if(!isTargColor && base.a == 0.0) {
-		for(float bobo = -outlineSize; bobo <= outlineSize; bobo+=0.05) { // x
-			for(float bibi = -outlineSize; bibi <= outlineSize; bibi+=0.05) { // y
+		for(float bobo = -outlineSize; bobo <= outlineSize; bobo+=0.1) { // x
+			for(float bibi = -outlineSize; bibi <= outlineSize; bibi+=0.1) { // y
 				if(bobo == 0.0 && bibi == 0.0) continue; // skip center LUL
 			
 				vec2 thisTexelPos = vec2((bobo) * texelX, (bibi) * texelY);

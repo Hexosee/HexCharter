@@ -107,6 +107,11 @@ for (bb = 0; bb < k; bb++)
 			break		
 			case 10:
 				draw_sprite(spr_special,4,notex,notey)
+				draw_set_color(make_color_rgb(229, 130, 94))
+				draw_set_alpha(0.5)
+				draw_rectangle(center, notey+10, notex, notey+32-10, false)
+				draw_set_color(c_white)
+				draw_set_alpha(1)
 			break
 		}
 		//draw_sprite(spr_dudOLD,0,center+bb*32,100+b*32)
@@ -115,6 +120,17 @@ for (bb = 0; bb < k; bb++)
 		draw_sprite(spr_receptorsNEW,bb >= keys ? bb-keys : bb,center+ofs+bb*32,100)
 	draw_set_alpha(1)		
 }
+
+var stricon_a = (curr_cam_targ == 0 or curr_cam_targ == 2 ? 1 : 0.25)
+if stricon_a == 1
+	draw_sprite_ext(spr_special, 3, center+8,75-16, 1, 1, 0, c_white, 0.25)
+var dudicon_a = (curr_cam_targ == 1 or curr_cam_targ == 2  ? 1 : 0.25)
+if dudicon_a == 1
+	draw_sprite_ext(spr_special, 1, center+(32*6)+10+64-8,75-16, -1, 1, 0, c_white, 0.25)
+
+draw_sprite_ext(spr_stradicon, 0, center+64, 75, 1, 1, 0, c_white, stricon_a)
+draw_sprite_ext(spr_dudeicon, 0, center+(32*6)+10, 75, 1, 1, 0, c_white, dudicon_a)
+
 var xx = center+curbb*32
 var yy = 100+curb*32+sd2
 var ofs2 = 0

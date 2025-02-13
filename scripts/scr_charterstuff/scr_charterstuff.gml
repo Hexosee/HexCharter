@@ -45,7 +45,7 @@ function chart_save(filename) {
 		file_text_writeln(file)
 		file_text_write_string(file, notespeed)
 		file_text_writeln(file)
-		file_text_write_string(file, keys)
+		file_text_write_string(file, "Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
 		file_text_writeln(file)
 	
 		var songlong = chart_get_songlong(song,bpm)
@@ -73,7 +73,7 @@ function chart_save_as(filename) {
 		file_text_writeln(file)
 		file_text_write_string(file, notespeed)
 		file_text_writeln(file)
-		file_text_write_string(file, keys)
+		file_text_write_string(file, "Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
 		file_text_writeln(file)
 	
 		var songlong = chart_get_songlong(song,bpm)

@@ -1,6 +1,9 @@
 idle_anim = spr_predude_idle
 pause_anim = spr_predude_pause
+ayy_anim = noone
+
 anims = [spr_predude_left, spr_predude_down, spr_predude_up, spr_predude_right]
+alt_anims = anims
 
 active = false
 cur_anim = idle_anim
