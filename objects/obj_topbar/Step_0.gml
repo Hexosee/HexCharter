@@ -30,6 +30,22 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 				case 1: // Save
 					chart_save(obj_chartcontroller.filename) // whoopsies
 					alert_make("Chart saved!")
+					
+					// clear autosaves (you just saved)
+					if directory_exists(obj_chartcontroller.autosave_dir) {
+						var autosaves = []
+					    var file = file_find_first(obj_chartcontroller.autosave_dir + "/*.swows", fa_none)
+						
+					    while file != "" {
+							array_push(autosaves, file)
+							file = file_find_next()
+						}
+					    file_find_close()
+						
+						if array_length(autosaves) != 0
+							for(var i = 0; i < array_length(autosaves); i++)
+								file_delete(obj_chartcontroller.autosave_dir + "/" + autosaves[i])
+					}
 				break
 				case 2:
 					var file

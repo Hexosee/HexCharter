@@ -27,6 +27,14 @@ customtype = 11 // dont go into the normal notes !!
 zoom = 1
 zlerp = 1
 
+// my realm... where the variables for MY features go..
+
+last_autosave_time = date_current_datetime() // it doesnt actually autosave here... just makes it more convenient later
+// make autosave dir cause it wont work if i dont
+autosave_dir = $"{working_directory}charts/{filename}/autosaves"
+if !directory_exists(autosave_dir)
+    directory_create(autosave_dir)
+
 play_metronome = false
 
 play_hitsounds = false

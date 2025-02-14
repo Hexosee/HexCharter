@@ -234,3 +234,25 @@ if (mx > 5 and mx < 320+5) and (my > 675 and my < 715) {
 		}
 	}
 }
+
+// autosaving
+var now = date_current_datetime()
+if last_autosave_time != now {
+	var diff_total_seconds = date_second_span(last_autosave_time, now)
+
+	var diff_mins = (diff_total_seconds/60)
+	if diff_mins >= 0.1 {
+		// IT'S AUTOSAVING TIME!
+		last_autosave_time = now
+		
+		// probably not necessary but who knows
+		var year =   date_get_year(now)
+		var month =  date_get_month(now)
+		var day =    date_get_day(now)
+		var hour =   date_get_hour(now)
+		var minute = date_get_minute(now)
+		var second = date_get_second(now)
+		chart_save_as($"{working_directory}charts/{filename}/autosaves/chart_autosave-{year}-{month}-{day}-{hour}-{minute}-{second}.swows")
+		alert_make("Autosaved chart!", false, 10)
+	}
+}
