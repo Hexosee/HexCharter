@@ -34,14 +34,18 @@ hitsound_id_blacklist = [4, 5, 6, 8, 9]
 last_hovered_step = 0
 
 // set up children
-prevdude = instance_create_depth(center/2+30, room_height*.835,-9999,obj_prevchar)
+prevdude = instance_create_depth(room_width - (center/2)+30, room_height*.835,-9999,obj_prevchar)
 
-prevbadguy = instance_create_depth(center/2-30, room_height*.835,-9999,obj_prevchar)
+prevbadguy = instance_create_depth(room_width - (center/2)-30, room_height*.835,-9999,obj_prevchar)
 // setup badguy anims
 prevbadguy.idle_anim = spr_prebadguy_idle
 prevbadguy.pause_anim = spr_prebadguy_pause
+prevbadguy.ayy_anim = spr_prebadguy_ayy
 
 prevbadguy.anims = [spr_prebadguy_left, spr_prebadguy_down, spr_prebadguy_up, spr_prebadguy_right]
+prevbadguy.alt_anims = [spr_prebadguy_left_a, spr_prebadguy_down_a, spr_prebadguy_up_a, spr_prebadguy_right_a]
 
 // for quick iteration later
 prevchars = [prevdude, prevbadguy]
+
+curr_cam_targ = 3

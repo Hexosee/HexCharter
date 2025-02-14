@@ -8,6 +8,7 @@ if keyboard_check_pressed(vk_space) {
 	if paused {
 		audio_resume_sound(songplaying)	
 		paused = false
+		curr_cam_targ = 2
 		
 		for (var i = 0; i < array_length(prevchars); i++) {
 			var prevchar = prevchars[i]
@@ -18,6 +19,7 @@ if keyboard_check_pressed(vk_space) {
 	else {
 		audio_pause_sound(songplaying)	
 		paused = true
+		curr_cam_targ = 3
 		
 		for (var i = 0; i < array_length(prevchars); i++) {
 			var prevchar = prevchars[i]
@@ -52,6 +54,7 @@ else
 		
 		prevdude.paused = true
 		prevbadguy.paused = true
+		curr_cam_targ = 3
 	}
 
 // zooming
@@ -111,25 +114,39 @@ else {
 			var this_note_idx = min(abs(steppos), songlong-1)
 			var this_note = notes[bb,this_note_idx]
 			
-			if this_note != 0 and not array_contains(hitsound_id_blacklist, this_note) {
-				if bb >= keys {
-					// its a duuuude note
-					if this_note == 1 {
-						prevdude.cur_anim = prevdude.anims[bb%4]
-						prevdude.image_index = 0
-						prevdude.image_blend = notecollist[bb%4]
-					}
-				} else {
-					// its a baaaadguy note
-					if this_note == 1 {
-						prevbadguy.cur_anim = prevbadguy.anims[bb%4]
+			if this_note == 4
+				curr_cam_targ = 1
+			if this_note == 5
+				curr_cam_targ = 2
+			if this_note == 6
+				curr_cam_targ = 0 // boooo
+			
+			if this_note != 0 {
+				var pitch = 1
+				if this_note == 1 or this_note == 2 or this_note == 8 or this_note == 9 or this_note == 7 {
+					if bb >= keys {
+						if this_note != 7 {
+							// its a duuuude note
+							var this_anim = prevdude.anims[bb%4]
+							if this_note == 2 or this_note == 9 this_anim = prevdude.alt_anims[bb%4]
+							prevdude.cur_anim = this_anim
+							prevdude.image_index = 0
+							prevdude.image_blend = notecollist[bb%4]
+							pitch = 1.25
+						}
+					} else {
+						// its a baaaadguy note
+						var this_anim = prevbadguy.anims[bb%4]
+						if this_note == 2 or this_note == 9 this_anim = prevbadguy.alt_anims[bb%4]
+						if this_note == 7 this_anim = prevbadguy.ayy_anim
+						prevbadguy.cur_anim = this_anim
 						prevbadguy.image_index = 0
-						prevbadguy.image_blend = notecollist[bb%4]
-					}
+						if this_anim != prevbadguy.ayy_anim prevbadguy.image_blend = notecollist[bb%4]
+					}	
 				}
 					
-				if play_hitsounds
-					audio_play_sound(snd_hitsound_default, 9999, 0)
+				if play_hitsounds and not array_contains(hitsound_id_blacklist, this_note)
+					audio_play_sound(snd_hitsound_default, 9999, 0, 1, 0, pitch)
 			}
 		}
 		last_hovered_step = floor(y/s)

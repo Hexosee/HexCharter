@@ -1,6 +1,9 @@
 idle_anim = spr_predude_idle
 pause_anim = spr_predude_pause
+ayy_anim = noone
+
 anims = [spr_predude_left, spr_predude_down, spr_predude_up, spr_predude_right]
+alt_anims = anims
 
 active = false
 cur_anim = idle_anim
@@ -13,6 +16,7 @@ paused = true
 // shader shits
 shad_targ = shader_get_uniform(sh_colorreplace, "targColor")
 shad_rep = shader_get_uniform(sh_colorreplace, "repColor")
+shad_texsize = shader_get_uniform(sh_colorreplace, "textureSize")
 
 // prevent default draw code
 image_alpha = 0

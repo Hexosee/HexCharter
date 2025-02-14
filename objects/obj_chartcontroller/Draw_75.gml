@@ -31,4 +31,8 @@ if mx == 8 and customtype <= 12 and fuck {
 }
 
 
-draw_sprite_ext(spr_previewplatform,0,center/2, room_height*.8,1,1,0,c_white,1)
+var ymod = (round(sin(current_time/650)*4))
+draw_sprite_ext(spr_previewplatform,0,room_width - (center/2), room_height*.8 + ymod,1.5,1.5,0,c_white,1)
+
+prevdude.y = room_height*.835 + ymod
+prevbadguy.y = prevdude.y
