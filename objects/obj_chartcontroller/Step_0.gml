@@ -56,10 +56,16 @@ else
 		audio_pause_sound(songplaying);
 		paused = true;
 		last_hovered_step = -1
-		
-		prevdude.paused = true
-		prevbadguy.paused = true
+
 		curr_cam_targ = 3
+		
+		for (var i = 0; i < array_length(prevchars); i++) {
+			var prevchar = prevchars[i]
+			prevchar.paused = true
+			prevchar.image_blend = c_white
+			prevchar.active = false
+			prevchar.cur_anim = prevchar.idle_anim
+		}
 	}
 
 // zooming
