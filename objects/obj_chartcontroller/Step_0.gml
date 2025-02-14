@@ -247,7 +247,7 @@ if last_autosave_time != now {
 	var diff_total_seconds = date_second_span(last_autosave_time, now)
 
 	var diff_mins = (diff_total_seconds/60)
-	if diff_mins >= 0.1 {
+	if diff_mins >= 5 {
 		// IT'S AUTOSAVING TIME!
 		last_autosave_time = now
 		
