@@ -3,10 +3,10 @@ if keyboard_check(vk_shift)
 	s = mscroll*2	
 else
 	s = mscroll	
+		
 	
 if keyboard_check_pressed(vk_space) {
 	if paused {
-		audio_resume_sound(songplaying)	
 		paused = false
 		curr_cam_targ = 2
 		
@@ -17,7 +17,6 @@ if keyboard_check_pressed(vk_space) {
 		}
 	}
 	else {
-		audio_pause_sound(songplaying)	
 		paused = true
 		curr_cam_targ = 3
 		
@@ -30,6 +29,12 @@ if keyboard_check_pressed(vk_space) {
 		}
 	}
 }
+
+
+if paused
+	audio_pause_sound(song)
+else
+	audio_resume_sound(song)
 
 var mx = floor(mouse_x/35)
 if paused {
