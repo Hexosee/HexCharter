@@ -8,7 +8,7 @@ alt_anims = anims
 active = false
 cur_anim = idle_anim
 
-base_image_speed = 7
+base_image_speed = 11
 image_speed = base_image_speed
 
 paused = true

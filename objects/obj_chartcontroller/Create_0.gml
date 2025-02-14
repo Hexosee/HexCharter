@@ -12,8 +12,10 @@ notecollist = [c_purple, c_blue, c_green, c_red]
 //show_debug_overlay(true)
 if obj_persistent.creating == false 
 	filename = chart_load(obj_persistent.thischart)
-else
+else {
 	chart_create(obj_persistent.songname,obj_persistent.bpm,obj_persistent.sspeed,obj_persistent.songpath)
+	filename = obj_persistent.songname	
+}
 //chart_load_test()
 
 center = (room_width/2-keys*32)-keys

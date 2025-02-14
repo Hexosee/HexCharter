@@ -6,6 +6,8 @@ function chart_load(filename) {
 		file = file_text_open_read($"{working_directory}charts/{filename}/chart.swows")
 
 
+
+
 		songname = file_text_read_string(file)
 		file_text_readln(file)
 		bpm = file_text_read_real(file)
@@ -36,59 +38,72 @@ function chart_load(filename) {
 }
 
 function chart_save(filename) {
-	with (obj_chartcontroller) {
-		var file = file_text_open_write($"{working_directory}charts/{filename}/chart.swows")	
+	try {
+		with (obj_chartcontroller) {
+			print($"{working_directory}charts/{filename}/chart.swows")
+			var file = file_text_open_write($"{working_directory}charts/{filename}/chart.swows")	
 	
-		file_text_write_string(file, songname)
-		file_text_writeln(file)
-		file_text_write_string(file, bpm)
-		file_text_writeln(file)
-		file_text_write_string(file, notespeed)
-		file_text_writeln(file)
-		file_text_write_string(file, "Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
-		file_text_writeln(file)
+			file_text_write_string(file,  $"{songname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
+			file_text_writeln(file)
+			file_text_write_string(file, bpm)
+			file_text_writeln(file)
+			file_text_write_string(file, notespeed)
+			file_text_writeln(file)
+			file_text_write_string(file, keys)
+			file_text_writeln(file)
 	
-		var songlong = chart_get_songlong(song,bpm)
-		var bb,b
-		for (bb = 0; bb < (keys * 2); bb++)
-		{
-		    for (b = 0; b < songlong; b++)
-		    {
-		        file_text_write_string(file, notes[bb, b])
-		        file_text_writeln(file)
-		    }
-		}
+			var songlong = chart_get_songlong(song,bpm)
+			var bb,b
+			for (bb = 0; bb < (keys * 2); bb++)
+			{
+			    for (b = 0; b < songlong; b++)
+			    {
+			        file_text_write_string(file, notes[bb, b])
+			        file_text_writeln(file)
+			    }
+			}
 	
-		file_text_close(file)
-	}		
+			file_text_close(file)
+		}	
+	}
+	catch (_exc) {
+		alert_make("Something went wrong!",false)
+		show_message($"ERROR WHILE SAVING!!\n{_exc.longMessage}")
+	}
 }
 
 function chart_save_as(filename) {
-	with (obj_chartcontroller) {
-		var file = file_text_open_write(filename)	
+	try {
+		with (obj_chartcontroller) {
+			var file = file_text_open_write(filename)	
 	
-		file_text_write_string(file, songname)
-		file_text_writeln(file)
-		file_text_write_string(file, bpm)
-		file_text_writeln(file)
-		file_text_write_string(file, notespeed)
-		file_text_writeln(file)
-		file_text_write_string(file, "Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
-		file_text_writeln(file)
+			file_text_write_string(file, $"{songname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
+			file_text_writeln(file)
+			file_text_write_string(file, bpm)
+			file_text_writeln(file)
+			file_text_write_string(file, notespeed)
+			file_text_writeln(file)
+			file_text_write_string(file, keys)
+			file_text_writeln(file)
 	
-		var songlong = chart_get_songlong(song,bpm)
-		var bb,b
-		for (bb = 0; bb < (keys * 2); bb++)
-		{
-		    for (b = 0; b < songlong; b++)
-		    {
-		        file_text_write_string(file, notes[bb, b])
-		        file_text_writeln(file)
-		    }
-		}
+			var songlong = chart_get_songlong(song,bpm)
+			var bb,b
+			for (bb = 0; bb < (keys * 2); bb++)
+			{
+			    for (b = 0; b < songlong; b++)
+			    {
+			        file_text_write_string(file, notes[bb, b])
+			        file_text_writeln(file)
+			    }
+			}
 	
-		file_text_close(file)
-	}		
+			file_text_close(file)
+		}	
+	}
+	catch (_exc) {
+		alert_make("Something went wrong!",false)
+		show_message($"ERROR WHILE SAVING!!\n{_exc.longMessage}")
+	}
 }
 
 function chart_load_test() {
@@ -114,7 +129,7 @@ function chart_load_test() {
 function chart_create(ssongname, bbpm, nnotespeed, songpath) {
 	file_copy(songpath, $"{working_directory}charts/{ssongname}/song.ogg")
 	
-	songname = ssongname
+	songname = $"{ssongname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)"
 	song = audio_create_stream($"{working_directory}charts/{ssongname}/song.ogg")
 	print(song)
 	bpm = bbpm

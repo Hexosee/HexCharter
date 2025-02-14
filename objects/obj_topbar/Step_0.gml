@@ -28,13 +28,13 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 					transition_goto(rm_newchart)
 				break
 				case 1: // Save
-					chart_save(obj_chartcontroller.filename)
+					chart_save(obj_chartcontroller.filename) // whoopsies
 					alert_make("Chart saved!")
 				break
 				case 2:
 					var file
 					print(obj_chartcontroller.songname)
-					file = get_save_filename($"fnffd chart|*.swows", $"{obj_chartcontroller.songname}.swows");
+					file = get_save_filename($"fnffd chart|*.swows", $"{obj_chartcontroller.filename}.swows");
 					if file != "" {
 						chart_save_as(file)
 						alert_make("Chart saved!")
