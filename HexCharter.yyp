@@ -47,6 +47,7 @@
     {"$GMIncludedFile":"","%Name":"chart.swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"chart.swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"song.ogg","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"song.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"catpuccin-mocha.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"catpuccin-mocha.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"grayscale.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"grayscale.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"gruvbox.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"gruvbox.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"My palet.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"My palet.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"raspberry-candy.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"raspberry-candy.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
