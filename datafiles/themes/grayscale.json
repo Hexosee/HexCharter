@@ -1,0 +1,23 @@
+{
+    "author" : "hexose",
+
+    "col_bg" : [33,33,33],
+    "col_overlay" : [17,17,17],
+    
+    // light
+    "col_grid1" : [76,76,76],
+    "col_grid1_offbeat" : [122,122,122],
+
+    // offsection
+    "col_grid1_b" : [45,45,45],
+    "col_grid1_offbeat_b" : [66,66,66],
+
+    // dark
+    "col_grid2" : [56,56,56],
+    "col_grid2_offbeat" : [91,91,91],
+
+    // offsection
+    "col_grid2_b" : [25,25,25],
+    "col_grid2_offbeat_b" : [37,37,37],
+    
+}
