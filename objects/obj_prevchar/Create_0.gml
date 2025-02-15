@@ -4,11 +4,12 @@ ayy_anim = noone
 
 anims = [spr_predude_left, spr_predude_down, spr_predude_up, spr_predude_right]
 alt_anims = anims
+bomb_anims = anims
 
 active = false
 cur_anim = idle_anim
 
-base_image_speed = 11
+base_image_speed = 9
 image_speed = base_image_speed
 
 paused = true

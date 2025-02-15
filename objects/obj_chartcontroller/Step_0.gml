@@ -128,7 +128,7 @@ else {
 			
 			if this_note != 0 {
 				var pitch = 1
-				if this_note == 1 or this_note == 2 or this_note == 8 or this_note == 9 or this_note == 7 {
+				if this_note == 1 or this_note == 2 or this_note == 8 or this_note == 9 or this_note == 7 or this_note == 3 {
 					if bb >= keys {
 						if this_note != 7 {
 							// its a duuuude note
@@ -144,9 +144,10 @@ else {
 						var this_anim = prevbadguy.anims[bb%4]
 						if this_note == 2 or this_note == 9 this_anim = prevbadguy.alt_anims[bb%4]
 						if this_note == 7 this_anim = prevbadguy.ayy_anim
+						if this_note == 3 this_anim = prevbadguy.bomb_anims[bb%4]
 						prevbadguy.cur_anim = this_anim
 						prevbadguy.image_index = 0
-						if this_anim != prevbadguy.ayy_anim prevbadguy.image_blend = notecollist[bb%4]
+						if this_anim != prevbadguy.ayy_anim and not array_contains(prevbadguy.bomb_anims,this_anim) prevbadguy.image_blend = notecollist[bb%4]
 					}	
 				}
 					
@@ -241,7 +242,7 @@ if last_autosave_time != now {
 	var diff_total_seconds = date_second_span(last_autosave_time, now)
 
 	var diff_mins = (diff_total_seconds/60)
-	if diff_mins >= 0.1 {
+	if diff_mins >= 5 {
 		// IT'S AUTOSAVING TIME!
 		last_autosave_time = now
 		

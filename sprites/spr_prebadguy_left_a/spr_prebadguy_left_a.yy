@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"badguy",
-    "path":"folders/Sprites/ui/preview/badguy.yy",
+    "name":"alt",
+    "path":"folders/Sprites/ui/preview/badguy/alt.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

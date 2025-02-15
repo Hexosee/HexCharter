@@ -54,7 +54,7 @@ prevbadguy.ayy_anim = spr_prebadguy_ayy
 
 prevbadguy.anims = [spr_prebadguy_left, spr_prebadguy_down, spr_prebadguy_up, spr_prebadguy_right]
 prevbadguy.alt_anims = [spr_prebadguy_left_a, spr_prebadguy_down_a, spr_prebadguy_up_a, spr_prebadguy_right_a]
-
+prevbadguy.bomb_anims = [spr_prebadguy_left_b,spr_prebadguy_down_b,spr_prebadguy_up_b,spr_prebadguy_right_b]
 // for quick iteration later
 prevchars = [prevdude, prevbadguy]
 
