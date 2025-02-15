@@ -41,8 +41,8 @@ function change_sel(amt) {
 function get_theme_vars(theme) {
 	self.curr_theme = parse_theme(theme)
 
-	self.curr_fore_col = targ_fore_col
-	self.curr_back_col = targ_back_col
+	self.curr_fore_col = merge_color(curr_fore_col, targ_fore_col, curr_alpha_lerp)
+	self.curr_back_col = merge_color(curr_back_col, targ_back_col, curr_alpha_lerp)
 	
 	self.targ_back_col = make_color_rgb(curr_theme.col_overlay[0], curr_theme.col_overlay[1], curr_theme.col_overlay[2])
 	self.targ_fore_col = make_color_rgb(curr_theme.col_grid2[0], curr_theme.col_grid2[1], curr_theme.col_grid2[2])
