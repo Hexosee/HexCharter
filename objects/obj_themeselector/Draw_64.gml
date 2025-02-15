@@ -1,5 +1,5 @@
 draw_tiled_background(curr_back_col, curr_fore_col)
-curr_alpha_lerp = lerp(curr_alpha_lerp, 1, d(0.2))
+curr_alpha_lerp = lerp(curr_alpha_lerp, 1, d(0.1))
 draw_tiled_background(targ_back_col, targ_fore_col, curr_alpha_lerp, 0)
 
 draw_set_font(fnt_big)

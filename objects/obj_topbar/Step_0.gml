@@ -71,7 +71,14 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 				break
 			}
 		break
-		case 2:
+		case 2: // edit
+			switch(curopt) {
+				case 0:
+					print((floor((obj_chartcontroller.y-1)/(obj_chartcontroller.mscroll*16))))
+				break
+			}
+		break
+		case 3: // tools
 			switch(curopt) {
 				case 0:
 					obj_chartcontroller.play_metronome = !obj_chartcontroller.play_metronome
@@ -86,6 +93,7 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 					alert_make("Hitsounds now set to " + status, false, 10)
 					menuopen = noone
 					selected = -1
+				break
 			}
 		break
 	}
