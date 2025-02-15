@@ -9,7 +9,7 @@ bomb_anims = anims
 active = false
 cur_anim = idle_anim
 
-base_image_speed = 9
+base_image_speed = 7
 image_speed = base_image_speed
 
 paused = true

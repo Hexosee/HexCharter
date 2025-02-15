@@ -153,6 +153,7 @@ else {
 						if this_note == 3 this_anim = prevbadguy.bomb_anims[bb%4]
 						prevbadguy.cur_anim = this_anim
 						prevbadguy.image_index = 0
+						prevbadguy.image_blend = c_white
 						if this_anim != prevbadguy.ayy_anim and not array_contains(prevbadguy.bomb_anims,this_anim) prevbadguy.image_blend = notecollist[bb%4]
 					}	
 				}
