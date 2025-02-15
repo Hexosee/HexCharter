@@ -1,0 +1,26 @@
+{
+
+    "name" : "Abyss",
+    "author" : "kayla",
+
+    "col_bg" : [0, 0, 0],
+    "col_overlay" : [25, 25, 25],
+    
+    // light
+    "col_grid1" : [28, 28, 28],
+    "col_grid1_offbeat" : [22, 22, 22],
+
+    // offsection
+    // surface 2 and overlay 0
+    "col_grid1_b" : [38, 38, 38],
+    "col_grid1_offbeat_b" : [32, 32, 32],
+
+    // dark
+    "col_grid2" : [15, 15, 15],
+    "col_grid2_offbeat" : [9, 9, 9],
+
+    // offsection
+    "col_grid2_b" : [25, 25, 25],
+    "col_grid2_offbeat_b" : [19, 19, 19],
+    
+}

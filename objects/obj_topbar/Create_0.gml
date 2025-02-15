@@ -11,11 +11,12 @@ barstruct = { // dude fuck gamemaker
 	B_Help : ["Documentation"],
 	//Edit : ["Undo","Redo"],
 	//View : ["sorry nothing"]
+	C_Edit : ["Copy Last Section"],
 	
-	C_Tools : ["Toggle Metronome", "Toggle Hitsounds"]
+	D_Tools : ["Toggle Metronome", "Toggle Hitsounds"]
 }
 
-keys = ["File","Help","Tools"]
+keys = ["File","Help","Edit","Tools"]
 realkeys = variable_struct_get_names(barstruct)
 array_sort(realkeys,true)
 
