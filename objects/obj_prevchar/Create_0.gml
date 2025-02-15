@@ -9,7 +9,7 @@ bomb_anims = [spr_predude_left_b, spr_predude_down_b, spr_predude_up_b, spr_pred
 active = false
 cur_anim = idle_anim
 
-base_image_speed = 7
+base_image_speed = 9
 image_speed = base_image_speed
 
 paused = true

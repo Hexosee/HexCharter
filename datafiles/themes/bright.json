@@ -1,0 +1,26 @@
+{
+
+    "name" : "The Pearly Gates",
+    "author" : "kayla",
+
+    "col_bg" : [250, 250, 250],
+    "col_overlay" : [196, 196, 196],
+    
+    // light
+    "col_grid1" : [247, 247, 247],
+    "col_grid1_offbeat" : [221, 221, 221],
+
+    // offsection
+    // surface 2 and overlay 0
+    "col_grid1_b" : [196, 196, 196],
+    "col_grid1_offbeat_b" : [165, 165, 165],
+
+    // dark
+    "col_grid2" : [206, 206, 206],
+    "col_grid2_offbeat" : [186, 186, 186],
+
+    // offsection
+    "col_grid2_b" : [173, 173, 173],
+    "col_grid2_offbeat_b" : [153, 153, 153],
+    
+}
