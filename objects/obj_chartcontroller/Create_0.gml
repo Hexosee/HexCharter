@@ -11,7 +11,10 @@ notecollist = [c_purple, c_blue, c_green, c_red]
 
 //show_debug_overlay(true)
 if obj_persistent.creating == false 
-	filename = chart_load(obj_persistent.thischart)
+	if obj_persistent.is_autosave
+		filename = chart_load_autosave(obj_persistent.thischart,obj_persistent.thissave)
+	else
+		filename = chart_load(obj_persistent.thischart)
 else {
 	chart_create(obj_persistent.songname,obj_persistent.bpm,obj_persistent.sspeed,obj_persistent.songpath)
 	filename = obj_persistent.songname	

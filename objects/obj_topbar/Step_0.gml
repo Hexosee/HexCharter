@@ -59,6 +59,7 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 				case 3: // Exit (technically load if you think about it)
 					if !instance_exists(obj_transition) {
 						transition_goto(rm_chartselect)
+						obj_persistent.is_autosave = false
 					}
 				break
 			}

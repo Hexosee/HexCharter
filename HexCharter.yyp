@@ -47,6 +47,7 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"Goog ....swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial/autosaves","name":"Goog ....swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"chart.swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"chart.swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"song.ogg","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"song.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"catpuccin-mocha.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"catpuccin-mocha.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

@@ -17,7 +17,10 @@ col_grid2_b = make_color_rgb(70, 73, 107)
 col_grid2_offbeat_b = make_color_rgb(78, 71, 112)
 
 thischart = ""
+thissave = ""
 creating = false
+is_autosave = false
+
 
 config = {
 	ver:"1.0",

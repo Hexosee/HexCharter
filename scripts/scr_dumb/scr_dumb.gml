@@ -34,6 +34,26 @@ function is_scrolling_up() {
 		return false
 }
 
+function folder_is_empty(path) {
+	if !directory_exists(path) return false
+	var goog = file_find_first(path+"*",fa_none)
+	file_find_close()
+	return (goog != "")
+}
+
+function folder_get_files(path) {
+	var i = 0
+	var filez = []
+	var file = file_find_first(path,fa_none)
+	while (file != "") {
+		filez[i] = file	
+		i++
+		file = file_find_next()
+	}
+	file_find_close()
+	return filez
+}
+
 function draw_tiled_background(back = obj_persistent.col_overlay, fore = obj_persistent.col_grid2, alpha = 1, xmod = 1) {
 	x+=(d(0.5))*xmod
 	

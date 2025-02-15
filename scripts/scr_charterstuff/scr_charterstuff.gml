@@ -5,8 +5,41 @@ function chart_load(filename) {
 		song = audio_create_stream($"{working_directory}charts/{filename}/song.ogg")
 		file = file_text_open_read($"{working_directory}charts/{filename}/chart.swows")
 
+		songname = file_text_read_string(file)
+		file_text_readln(file)
+		bpm = file_text_read_real(file)
+		file_text_readln(file)
+		notespeed = file_text_read_real(file)
+		file_text_readln(file)
+		keys = file_text_read_real(file)
+		
+		songlong = chart_get_songlong(song,bpm)
 
+		var b,bb
+		for (bb = 0; bb < keys*2; bb++)
+		{
+		    for (b = 0; b < songlong; b++)
+		    {
+		        notes[bb, b] = file_text_read_real(file)
+		        file_text_readln(file)
+		    }
+		}
 
+		file_text_close(file)
+		
+		songplaying = audio_play_sound(song,0,true)
+		audio_pause_sound(songplaying)
+		
+	}
+	return filename
+}
+
+function chart_load_autosave(filename,autosave) {
+	with (obj_chartcontroller) {
+
+		//filename = string(working_directory) + string(argument0) + ".swows";
+		song = audio_create_stream($"{working_directory}charts/{filename}/song.ogg")
+		file = file_text_open_read($"{working_directory}charts/{filename}/autosaves/{autosave}")
 
 		songname = file_text_read_string(file)
 		file_text_readln(file)
