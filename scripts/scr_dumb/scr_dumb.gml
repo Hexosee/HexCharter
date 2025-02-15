@@ -34,6 +34,16 @@ function is_scrolling_up() {
 		return false
 }
 
+function draw_tiled_background(back = obj_persistent.col_overlay, fore = obj_persistent.col_grid2, alpha = 1, xmod = 1) {
+	x+=(d(0.5))*xmod
+	
+	draw_set_color(back)
+	draw_set_alpha(alpha)
+	draw_rectangle(0, 0, room_width, room_height, false)
+	draw_set_alpha(1)
+	draw_set_color(c_white)
+	draw_sprite_tiled_ext(spr_chartselbg,0,x,x,2,2,fore,alpha)
+}
 
 #macro MOUSE_X device_mouse_x_to_gui(0)
 #macro MOUSE_Y device_mouse_y_to_gui(0)

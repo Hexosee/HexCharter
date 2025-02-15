@@ -1,4 +1,5 @@
 {
+    "name" : "Grayscale",
     "author" : "hexose",
 
     "col_bg" : [33,33,33],

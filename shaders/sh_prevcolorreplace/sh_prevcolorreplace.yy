@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"sh_colorreplace",
-  "name":"sh_colorreplace",
+  "%Name":"sh_prevcolorreplace",
+  "name":"sh_prevcolorreplace",
   "parent":{
     "name":"Shaders",
     "path":"folders/Shaders.yy",
