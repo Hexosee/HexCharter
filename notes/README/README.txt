@@ -1,5 +1,3 @@
-couldn't be bothered finishing this lawl
+i'll do this soon maybe
 
-feel free to do it yourself tho :]
-
-- hexose
+- hex "hexose" ose
