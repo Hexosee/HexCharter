@@ -4,7 +4,7 @@ ayy_anim = noone
 
 anims = [spr_predude_left, spr_predude_down, spr_predude_up, spr_predude_right]
 alt_anims = anims
-bomb_anims = anims
+bomb_anims = [spr_predude_left_b, spr_predude_down_b, spr_predude_up_b, spr_predude_right_b]
 
 active = false
 cur_anim = idle_anim

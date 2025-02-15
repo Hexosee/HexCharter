@@ -140,9 +140,11 @@ else {
 							// its a duuuude note
 							var this_anim = prevdude.anims[bb%4]
 							if this_note == 2 or this_note == 9 this_anim = prevdude.alt_anims[bb%4]
+							if this_note == 3 this_anim = prevdude.bomb_anims[bb%4]
 							prevdude.cur_anim = this_anim
 							prevdude.image_index = 0
-							prevdude.image_blend = notecollist[bb%4]
+							if not array_contains(prevdude.bomb_anims,this_anim) prevdude.image_blend = notecollist[bb%4]
+							else prevdude.image_blend = c_white
 							pitch = 1.25
 						}
 					} else {
@@ -154,6 +156,7 @@ else {
 						prevbadguy.cur_anim = this_anim
 						prevbadguy.image_index = 0
 						if this_anim != prevbadguy.ayy_anim and not array_contains(prevbadguy.bomb_anims,this_anim) prevbadguy.image_blend = notecollist[bb%4]
+						else prevbadguy.image_blend = c_white
 					}	
 				}
 					
