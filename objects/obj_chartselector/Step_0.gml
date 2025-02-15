@@ -11,6 +11,10 @@ if keyboard_check_pressed(vk_alt) {
 	transition_goto(rm_playtesting)	
 }
 */	
+
+if keyboard_check_pressed(vk_f2) {
+	transition_goto(rm_themeselector)
+}
 	
 
 if keyboard_check_pressed(vk_enter) {

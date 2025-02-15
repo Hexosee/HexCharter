@@ -38,3 +38,7 @@ downscroll = false
 
 delta_init()
 
+function set_theme(theme) {
+	config.charter.curtheme = theme
+	theme_load(theme)
+}

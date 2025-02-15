@@ -1,5 +1,4 @@
-x+=d(0.5)
-draw_sprite_tiled_ext(spr_chartselbg,0,x,x,2,2,c_white,1)
+draw_tiled_background()
 
 draw_set_font(fnt_big)
 draw_set_halign(fa_left)
