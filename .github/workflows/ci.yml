@@ -1,5 +1,5 @@
 # thank you gamemaker :praying_hands:
-name: Continuous Integration for Windows export
+name: automatic charter build
 on: 
   push: #Uncomment this line to run the workflow on push
   workflow_dispatch: #This line allows you to run the workflow manually from the GitHub Actions page
