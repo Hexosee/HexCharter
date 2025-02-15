@@ -1,0 +1,27 @@
+{
+
+    // I LOVE EATING RADIOACTIVE MATERIALS
+    "name" : "Radioactive",
+    "author" : "hexose",
+
+    "col_bg" : [23,53,29],
+    "col_overlay" : [12,32,16],
+    
+    // light
+    "col_grid1" : [59,100,63],
+    "col_grid1_offbeat" : [67,109,83],
+
+    // offsection
+    // surface 2 and overlay 0
+    "col_grid1_b" : [73,127,80],
+    "col_grid1_offbeat_b" : [87,120,101],
+
+    // dark
+    "col_grid2" : [40,77,46],
+    "col_grid2_offbeat" : [45,99,65],
+
+    // offsection
+    "col_grid2_b" : [53,124,61],
+    "col_grid2_offbeat_b" : [70,113,86],
+    
+}

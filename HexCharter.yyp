@@ -47,7 +47,6 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"Goog ....swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial/autosaves","name":"Goog ....swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"chart.swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"chart.swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"song.ogg","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"song.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"bright.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"bright.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -55,6 +54,7 @@
     {"$GMIncludedFile":"","%Name":"grayscale.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"grayscale.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"gruvbox.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"gruvbox.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"My palet.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"My palet.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"radioactive.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"radioactive.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"raspberry-candy.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"raspberry-candy.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
