@@ -10,6 +10,7 @@ notelist = [[spr_notes,2,"Normal Note"],[spr_notes,1,"Alt Note"],[spr_bombs,1,"B
 notecollist = [c_purple, c_blue, c_green, c_red]
 
 //show_debug_overlay(true)
+/*
 if obj_persistent.creating == false 
 	if obj_persistent.is_autosave
 		filename = chart_load_autosave(obj_persistent.thischart,obj_persistent.thissave)
@@ -19,7 +20,8 @@ else {
 	chart_create(obj_persistent.songname,obj_persistent.bpm,obj_persistent.sspeed,obj_persistent.songpath)
 	filename = obj_persistent.songname	
 }
-//chart_load_test()
+*/
+frankenswows_load()
 
 center = (room_width/2-keys*32)-keys
 

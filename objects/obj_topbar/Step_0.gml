@@ -28,7 +28,8 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 					transition_goto(rm_newchart)
 				break
 				case 1: // Save
-					chart_save(obj_chartcontroller.filename) // whoopsies
+					//chart_save(obj_chartcontroller.filename) // whoopsies
+					frankenswows_save()
 					alert_make("Chart saved!")
 					
 					// clear autosaves (you just saved)

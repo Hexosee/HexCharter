@@ -143,6 +143,9 @@ if !(curbb < 0 or curbb >= keys*2) and !(curb < 0 or curb > songlong) {
 	draw_rectangle_color(xx+ofs2,yy,xx+31+ofs2,yy+31,c_white,c_white,c_white,c_white,false)
 }
 
+
+draw_text(MOUSE_X,MOUSE_Y,curb)
+
 /*
 draw_set_alpha(0.7)
 draw_sprite(spr_receptors,0,center,100)

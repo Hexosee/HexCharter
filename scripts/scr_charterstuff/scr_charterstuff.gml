@@ -139,25 +139,6 @@ function chart_save_as(filename) {
 	}
 }
 
-function chart_load_test() {
-	with (obj_chartcontroller) {
-		song = mus_tutorial
-		bpm = 95
-		notespeed = 1
-		keys = 5
-		
-		songlong = chart_get_songlong(song,bpm)
-		var bb,b
-		for (bb = 0; bb < (keys * 2); bb++)
-		{
-		    for (b = 0; b < songlong; b++)
-		        notes[bb, b] = 0;
-		}
-		songplaying = audio_play_sound(mus_tutorial,0,true)
-		audio_pause_sound(songplaying)
-	}
-	
-}
 
 function chart_create(ssongname, bbpm, nnotespeed, songpath) {
 	file_copy(songpath, $"{working_directory}charts/{ssongname}/song.ogg")

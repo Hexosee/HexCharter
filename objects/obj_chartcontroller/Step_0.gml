@@ -131,6 +131,11 @@ else {
 				curr_cam_targ = 2
 			if this_note == 6
 				curr_cam_targ = 0 // boooo
+				
+			if this_note == 15
+				bpm = 160
+			if this_note == 14
+				bpm = 130
 			
 			if this_note != 0 {
 				var pitch = 1
