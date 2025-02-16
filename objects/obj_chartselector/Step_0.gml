@@ -62,8 +62,10 @@ else {
 
 if keyboard_check_pressed(vk_f12) { 
 	// ngl sometimes its useful to just see the chart go by to see speeds.. will prob delete later
-	obj_persistent.playtest_chart = charts[sel]
-	transition_goto(rm_playtesting)	
+	if sel != 0 {
+		obj_persistent.playtest_chart = charts[sel]
+		transition_goto(rm_playtesting)	
+	}
 }
 
 

@@ -76,7 +76,7 @@ function chart_save(filename) {
 			print($"{working_directory}charts/{filename}/chart.swows")
 			var file = file_text_open_write($"{working_directory}charts/{filename}/chart.swows")	
 	
-			file_text_write_string(file,  $"{songname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
+			file_text_write_string(file,  $"{filename} | Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
 			file_text_writeln(file)
 			file_text_write_string(file, bpm)
 			file_text_writeln(file)
@@ -110,7 +110,7 @@ function chart_save_as(filename) {
 		with (obj_chartcontroller) {
 			var file = file_text_open_write(filename)	
 	
-			file_text_write_string(file, $"{songname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
+			file_text_write_string(file, $"{filename} | Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
 			file_text_writeln(file)
 			file_text_write_string(file, bpm)
 			file_text_writeln(file)
@@ -162,7 +162,7 @@ function chart_load_test() {
 function chart_create(ssongname, bbpm, nnotespeed, songpath) {
 	file_copy(songpath, $"{working_directory}charts/{ssongname}/song.ogg")
 	
-	songname = $"{ssongname} \\ Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)"
+	songname = $"{ssongname} | Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)"
 	song = audio_create_stream($"{working_directory}charts/{ssongname}/song.ogg")
 	print(song)
 	bpm = bbpm

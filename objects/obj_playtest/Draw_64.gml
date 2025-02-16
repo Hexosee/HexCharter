@@ -18,7 +18,7 @@ surface_set_target(surf)
 			break
 			
 			case 8: case 9: // janky sustains return from dx
-					var baba = image_yscale/2
+					var baba = 0.5
 					var obama=obj_playtest.notespeed/2
 					var stupididiotdumb
 					if obj_persistent.downscroll
@@ -26,10 +26,10 @@ surface_set_target(surf)
 					else
 						stupididiotdumb = -45*obama
 					if place_free(x,y-(obj_playtest.notespeed*baba)-48*obj_playtest.notespeed) { //top note cap
-						draw_sprite_ext(spr_p_holdcap,note,x,stupididiotdumb+(y-(obama)-48*(obama))*2,1,-(baba*(obama*4.5)),0,c_white,image_alpha) // - 0.15 for transparent sustains
+						draw_sprite_ext(spr_p_holdcap,note,x,stupididiotdumb+(y-(obama))-48*(obama)*2,1,-(baba*(obama*4.5)),0,c_white,image_alpha) // - 0.15 for transparent sustains
 					}
 					if place_free(x,y+(obj_playtest.notespeed*baba)+48*obj_playtest.notespeed) { //bottom note cap
-						draw_sprite_ext(spr_p_holdcap,note,x,stupididiotdumb+(y-((obama)*baba)+48*(obama))*2,1,(baba*(obama*4.5)),0,c_white,image_alpha)
+						draw_sprite_ext(spr_p_holdcap,note,x,stupididiotdumb+(y-(obama))+48*(obama)*2,1,(baba*(obama*4.5)),0,c_white,image_alpha)
 					}
 
 					draw_sprite_ext(spr_p_holds,note,x,stupididiotdumb+(y-(obj_playtest.notespeed*baba)),1,(baba*(obj_playtest.notespeed))*2,0,image_blend,image_alpha)

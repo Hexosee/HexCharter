@@ -9,7 +9,7 @@ var scrolldist = y/(mscroll)
 var sd2 = y*(mscroll/32)
 var k = keys*2
 
-
+var event = 0
 for (bb = 0; bb < k; bb++)
 {
 	if bb >= keys 
@@ -107,6 +107,7 @@ for (bb = 0; bb < k; bb++)
 			break		
 			case 10:
 				draw_sprite(spr_special,4,notex,notey)
+				draw_set_halign(fa_center)
 				draw_set_color(make_color_rgb(229, 130, 94))
 				draw_set_alpha(0.5)
 				draw_rectangle(center, notey+10, notex, notey+32-10, false)
