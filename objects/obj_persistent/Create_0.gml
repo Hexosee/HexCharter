@@ -21,6 +21,7 @@ thissave = ""
 creating = false
 is_autosave = false
 
+playtest_chart = "tutorial"
 
 config = {
 	ver:"1.0",
