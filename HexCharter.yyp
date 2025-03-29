@@ -101,6 +101,7 @@
     {"id":{"name":"snd_josh","path":"sounds/snd_josh/snd_josh.yy",},},
     {"id":{"name":"snd_metrodown_default","path":"sounds/snd_metrodown_default/snd_metrodown_default.yy",},},
     {"id":{"name":"snd_metroup_default","path":"sounds/snd_metroup_default/snd_metroup_default.yy",},},
+    {"id":{"name":"snd_owch","path":"sounds/snd_owch/snd_owch.yy",},},
     {"id":{"name":"spr_bombs","path":"sprites/spr_bombs/spr_bombs.yy",},},
     {"id":{"name":"spr_chartselbg","path":"sprites/spr_chartselbg/spr_chartselbg.yy",},},
     {"id":{"name":"spr_dudeicon","path":"sprites/spr_dudeicon/spr_dudeicon.yy",},},
