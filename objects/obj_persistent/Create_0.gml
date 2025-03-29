@@ -39,6 +39,7 @@ theme_load(config.charter.curtheme)
 
 // playtesting
 downscroll = false
+bind = [ord("D"),ord("F"),ord("J"),ord("K")]
 
 delta_init()
 

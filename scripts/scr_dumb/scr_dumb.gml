@@ -66,5 +66,19 @@ function draw_tiled_background(back = obj_persistent.col_overlay, fore = obj_per
 	draw_sprite_tiled_ext(spr_chartselbg,0,tilex,tilex,2,2,fore,alpha)
 }
 
+function draw_outlined_text(xxx,yyy,str,color,scale,rot=0,borderscale = 5){ // this one kinda sucks sorry
+	draw_set_color(c_black)
+	var xx;
+	var yy;
+	for (xx=0;xx<borderscale;xx+=scale) {
+		for (yy=0;yy<borderscale;yy+=scale) {
+		    draw_text_transformed(xxx+xx-scale,yyy+yy-scale,str,scale,scale,rot)
+		    draw_text_transformed(xxx+xx,yyy+yy,str,scale,scale,rot)
+		}
+	}	
+	draw_set_color(color)
+	draw_text_transformed(xxx,yyy,str,scale,scale,rot)
+}
+
 #macro MOUSE_X device_mouse_x_to_gui(0)
 #macro MOUSE_Y device_mouse_y_to_gui(0)

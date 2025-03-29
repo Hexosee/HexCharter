@@ -107,6 +107,7 @@
     {"id":{"name":"spr_dudOLD","path":"sprites/spr_dudOLD/spr_dudOLD.yy",},},
     {"id":{"name":"spr_notes","path":"sprites/spr_notes/spr_notes.yy",},},
     {"id":{"name":"spr_noteshold","path":"sprites/spr_noteshold/spr_noteshold.yy",},},
+    {"id":{"name":"spr_p_bombs","path":"sprites/spr_p_bombs/spr_p_bombs.yy",},},
     {"id":{"name":"spr_p_holdcap","path":"sprites/spr_p_holdcap/spr_p_holdcap.yy",},},
     {"id":{"name":"spr_p_holds","path":"sprites/spr_p_holds/spr_p_holds.yy",},},
     {"id":{"name":"spr_p_notes","path":"sprites/spr_p_notes/spr_p_notes.yy",},},

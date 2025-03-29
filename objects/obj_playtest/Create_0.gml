@@ -5,3 +5,7 @@ surf = surface_create(800,800)
 alarm[0] = 1
 
 pausy = false
+
+coolscore = 0
+misses = 0
+songpos = 0

@@ -162,7 +162,7 @@ function chart_load_test() {
 function chart_create(ssongname, bbpm, nnotespeed, songpath) {
 	file_copy(songpath, $"{working_directory}charts/{ssongname}/song.ogg")
 	
-	songname = $"{ssongname} | Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)"
+	songname = $"{ssongname}"
 	song = audio_create_stream($"{working_directory}charts/{ssongname}/song.ogg")
 	print(song)
 	bpm = bbpm
