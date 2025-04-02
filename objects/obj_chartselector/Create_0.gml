@@ -1,3 +1,5 @@
+obj_persistent.creating = false // fuck my charting life
+
 if !audio_is_playing(mus_arkaid)
 	menusonglol = audio_play_sound(mus_arkaid,0,true)
 else
