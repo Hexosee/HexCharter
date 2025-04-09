@@ -55,6 +55,7 @@ else {
 			obj_persistent.thischart = charts[sel]
 			obj_persistent.thissave = saves[autosel]
 			obj_persistent.is_autosave = true
+			audio_stop_sound(mus_arkaid)
 			transition_goto(rm_charter)
 		}
 	}
