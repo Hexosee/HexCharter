@@ -52,7 +52,7 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 					print(obj_chartcontroller.songname)
 					file = get_save_filename($"fnffd chart|*.swows", $"{obj_chartcontroller.filename}.swows");
 					if file != "" {
-						chart_save_as(file)
+						chart_save_as(file, obj_chartcontroller.filename)
 						alert_make("Chart saved!")
 					}
 				break

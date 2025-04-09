@@ -105,10 +105,11 @@ function chart_save(filename) {
 	}
 }
 
-function chart_save_as(filename) {
+function chart_save_as(filepath, filename) {
 	try {
 		with (obj_chartcontroller) {
-			var file = file_text_open_write(filename)	
+			
+			var file = file_text_open_write(filepath)	
 	
 			file_text_write_string(file, $"{filename} | Chart made with SUPER Charter 900 (https://tinyurl.com/supercharter900)")
 			file_text_writeln(file)
