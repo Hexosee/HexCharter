@@ -128,6 +128,7 @@
     {"id":{"name":"spr_prebadguy_up_a","path":"sprites/spr_prebadguy_up_a/spr_prebadguy_up_a.yy",},},
     {"id":{"name":"spr_prebadguy_up_b","path":"sprites/spr_prebadguy_up_b/spr_prebadguy_up_b.yy",},},
     {"id":{"name":"spr_prebadguy_up","path":"sprites/spr_prebadguy_up/spr_prebadguy_up.yy",},},
+    {"id":{"name":"spr_predude_ayy","path":"sprites/spr_predude_ayy/spr_predude_ayy.yy",},},
     {"id":{"name":"spr_predude_down_b","path":"sprites/spr_predude_down_b/spr_predude_down_b.yy",},},
     {"id":{"name":"spr_predude_down","path":"sprites/spr_predude_down/spr_predude_down.yy",},},
     {"id":{"name":"spr_predude_idle","path":"sprites/spr_predude_idle/spr_predude_idle.yy",},},

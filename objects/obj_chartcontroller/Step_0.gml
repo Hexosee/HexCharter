@@ -136,14 +136,15 @@ else {
 				var pitch = 1
 				if this_note == 1 or this_note == 2 or this_note == 8 or this_note == 9 or this_note == 7 or this_note == 3 {
 					if bb >= keys {
-						if this_note != 7 {
+						if true { // too lazy to adjust the indentation... yawn!
 							// its a duuuude note
 							var this_anim = prevdude.anims[bb%4]
 							if this_note == 2 or this_note == 9 this_anim = prevdude.alt_anims[bb%4]
 							if this_note == 3 this_anim = prevdude.bomb_anims[bb%4]
+							if this_note == 7 this_anim = prevdude.ayy_anim
 							prevdude.cur_anim = this_anim
 							prevdude.image_index = 0
-							if not array_contains(prevdude.bomb_anims,this_anim) prevdude.image_blend = notecollist[bb%4]
+							if this_note != 7 and not array_contains(prevdude.bomb_anims,this_anim) prevdude.image_blend = notecollist[bb%4]
 							else prevdude.image_blend = c_white
 							pitch = 1.25
 						}
@@ -155,7 +156,7 @@ else {
 						if this_note == 3 this_anim = prevbadguy.bomb_anims[bb%4]
 						prevbadguy.cur_anim = this_anim
 						prevbadguy.image_index = 0
-						if this_anim != prevbadguy.ayy_anim and not array_contains(prevbadguy.bomb_anims,this_anim) prevbadguy.image_blend = notecollist[bb%4]
+						if this_note != 7 and not array_contains(prevbadguy.bomb_anims,this_anim) prevbadguy.image_blend = notecollist[bb%4]
 						else prevbadguy.image_blend = c_white
 					}	
 				}
