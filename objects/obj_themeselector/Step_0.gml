@@ -9,6 +9,13 @@ if keyboard_check_pressed(vk_enter) {
 		if sel != 0 {
 			audio_play_sound(snd_josh, 0, false)
 			obj_persistent.set_theme(themes[sel][1])
+			
+			// this is bad
+			themes = load_theme_list()
+			array_insert(themes, 0, ["Back",""])
+			array_insert(themes, 1, ["",""])
+			
+			themes[sel][0] = "> " + themes[sel][0]
 		}
 		else {
 			audio_play_sound(snd_ha,0,false)
@@ -34,7 +41,29 @@ function change_sel(amt) {
 		if themes[sel][0] == ""
 			change_sel(sign(amt))
 	} else {
+		lastsel = last_sel // genius
+		
+		var draw_lastprev = themes[lastsel][0] != "Back" and themes[lastsel][0] != ""
+		if draw_lastprev {
+			var last_prevsurf = surface_create(prevsize[0],prevsize[1])
+			
+			surface_set_target(last_prevsurf)
+				draw_preview(curr_theme)
+			surface_reset_target()
+			
+			last_prevsprite = sprite_create_from_surface(last_prevsurf, 0, 0, prevsize[0],prevsize[1],false,false,prevsize[0],prevsize[1]/2)
+			surface_free(last_prevsurf)
+		}
+		
 		get_theme_vars(themes[sel][1])
+		var curr_prevsurf = surface_create(prevsize[0],prevsize[1])
+		
+		surface_set_target(curr_prevsurf)
+			draw_preview(curr_theme)
+		surface_reset_target() 
+		
+		curr_prevsprite = sprite_create_from_surface(curr_prevsurf, 0, 0, prevsize[0],prevsize[1],false,false,prevsize[0],prevsize[1]/2)
+		surface_free(curr_prevsurf)
 	}
 }
 
@@ -44,8 +73,8 @@ function get_theme_vars(theme) {
 	self.curr_fore_col = merge_color(curr_fore_col, targ_fore_col, curr_alpha_lerp)
 	self.curr_back_col = merge_color(curr_back_col, targ_back_col, curr_alpha_lerp)
 	
-	self.targ_back_col = make_color_rgb(curr_theme.col_overlay[0], curr_theme.col_overlay[1], curr_theme.col_overlay[2])
-	self.targ_fore_col = make_color_rgb(curr_theme.col_grid2[0], curr_theme.col_grid2[1], curr_theme.col_grid2[2])
+	self.targ_back_col = make_color_from_array(curr_theme.col_overlay)
+	self.targ_fore_col = make_color_from_array(curr_theme.col_grid2)
 	
 	self.curr_alpha_lerp = 0
 }

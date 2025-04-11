@@ -1,5 +1,7 @@
 draw_set_alpha(0.7)
-	draw_rectangle_color(0,0,1280,35,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,obj_persistent.col_overlay,false)
+	draw_set_color(obj_persistent.col_overlay)
+	draw_rectangle(0,0,1280,35,false)
+	draw_set_color(c_white)
 draw_set_alpha(1)
 
 draw_set_font(fnt_big)
