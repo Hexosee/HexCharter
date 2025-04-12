@@ -45,7 +45,20 @@ if themes[sel][0] != "Back" and themes[sel][0] != "" {
 	
 	var alphlerp = last_prevsprite != noone ? curr_alpha_lerp : 1
 	draw_sprite_ext(curr_prevsprite,0,ww-20,wh/2,1,1,0,c_white,alphlerp)
+	
+	draw_set_font(fnt_big)
+	draw_set_halign(fa_center)
+	
+	for(var bibi = -2; bibi <= 2; bibi++) {
+		for(var bobo = -2; bobo <= 2; bobo++) {
+			draw_text(ww-250+bibi,wh/2+500/2+15+bobo,$"author: {author}")
+		}
+	}
+	draw_set_color(c_white)
+	draw_text(ww-250,wh/2+250+15,$"author: {author}")
 }
 
+draw_set_halign(fa_left)
+draw_set_font(fnt_main)
 draw_set_color(c_white)
 draw_set_alpha(1)

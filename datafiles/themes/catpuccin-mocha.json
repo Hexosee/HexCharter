@@ -2,7 +2,7 @@
 
     // https://catppuccin.com/palette
     "name" : "Mocha",
-    "author" : "hexose",
+    "author" : "hexose (but not really)",
 
     "col_bg" : [30,30,46],
     "col_overlay" : [17,17,27],

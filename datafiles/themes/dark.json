@@ -4,7 +4,7 @@
     "author" : "kayla",
 
     "col_bg" : [0, 0, 0],
-    "col_overlay" : [25, 25, 25],
+    "col_overlay" : [0,0,0],
     
     // light
     "col_grid1" : [28, 28, 28],

@@ -2,15 +2,23 @@
 
 if !autosave_menu {
 
-	if keyboard_check_pressed(vk_up) or mouse_wheel_up()
+	if keyboard_check_pressed(vk_up) or mouse_wheel_up() {
 		sel--
+		while string_starts_with(charts[sel], "---") {
+			sel--	
+		}
+	}
 	
-	if keyboard_check_pressed(vk_down) or mouse_wheel_down()
+	if keyboard_check_pressed(vk_down) or mouse_wheel_down() {
 		sel++
+		while string_starts_with(charts[sel], "---") {
+			sel++	
+		}
+	}
 		
 	if keyboard_check_pressed(vk_enter) {
 		if !instance_exists(obj_transition) {
-			if sel != 0 {
+			if sel != 0 and sel != 1 {
 				obj_persistent.thischart = charts[sel]
 				if !folder_is_empty($"charts/{charts[sel]}/autosaves/") {
 					transition_goto(rm_charter)
@@ -29,7 +37,10 @@ if !autosave_menu {
 			}
 			else {
 				audio_play_sound(snd_josh,0,false)
-				transition_goto(rm_newchart)			
+				if sel == 0
+					transition_goto(rm_newchart)	
+				if sel == 1
+					transition_goto(rm_themeselector)
 			}
 		}
 	}
@@ -66,11 +77,6 @@ if keyboard_check_pressed(vk_f12) {
 		obj_persistent.playtest_chart = charts[sel]
 		transition_goto(rm_playtesting)	
 	}
-}
-
-
-if keyboard_check_pressed(vk_f2) {
-	transition_goto(rm_themeselector)
 }
 
 sel = clamp(sel,0,array_length(charts)-1)

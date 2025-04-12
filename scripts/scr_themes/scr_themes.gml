@@ -45,6 +45,8 @@ function theme_load(themeto) {
 		// offsection
 		col_grid2_b = make_color_rgb(theme.col_grid2_b[0],theme.col_grid2_b[1],theme.col_grid2_b[2])
 		col_grid2_offbeat_b = make_color_rgb(theme.col_grid2_offbeat_b[0],theme.col_grid2_offbeat_b[1],theme.col_grid2_offbeat_b[2])	
+	
+		author = theme.author
 	}
 }
 

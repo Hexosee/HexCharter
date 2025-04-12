@@ -4,7 +4,7 @@ if !audio_is_playing(mus_arkaid)
 	menusonglol = audio_play_sound(mus_arkaid,0,true)
 else
 	menusonglol = -1
-charts = ["New Chart"]
+charts = ["New Chart", "Select Theme", "----------"]
 
 folder = file_find_first(working_directory + "charts/*", fa_directory)
 

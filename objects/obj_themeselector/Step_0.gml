@@ -77,4 +77,6 @@ function get_theme_vars(theme) {
 	self.targ_fore_col = make_color_from_array(curr_theme.col_grid2)
 	
 	self.curr_alpha_lerp = 0
+	
+	self.author = curr_theme.author
 }
