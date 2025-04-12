@@ -74,5 +74,7 @@ function load_theme_list() {
 		theme = file_find_next()
 	}
 	
+	file_find_close()
+	
 	return themes
 }

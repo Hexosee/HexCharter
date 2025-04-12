@@ -47,3 +47,23 @@ function set_theme(theme) {
 	config.charter.curtheme = theme
 	theme_load(theme)
 }
+
+// untested and probably doesnt work yet
+// i'll do this tomorrow! (I PROMISE!)
+if directory_exists(working_directory + "custom/") {
+	file = file_find_first(working_directory + "custom/*", 0)
+
+	while (file != "") {
+		switch(asset_get_type(file)) {
+			default: case asset_unknown:
+				print(file,"invalid mod asset")
+			break
+			case asset_sprite:
+				sprite_replace(asset_get_index(file),1,0,false,false,0,0)
+			break
+		}
+		folder = file_find_next()
+	}
+
+	file_find_close()
+}

@@ -13,6 +13,8 @@ while (folder != "") {
 	folder = file_find_next()
 }
 
+file_find_close()
+
 sel = 0
 
 // autosave submenu
