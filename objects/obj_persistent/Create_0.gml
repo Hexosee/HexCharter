@@ -50,27 +50,55 @@ function set_theme(theme) {
 
 // untested and probably doesnt work yet
 // i'll do this tomorrow! (I PROMISE!)
-
-warningup = true
 warningup = false
 buttonlatch = false
 invalidfiles = []
 
-/*
 if directory_exists(working_directory + "custom/") {
-	file = file_find_first(working_directory + "custom/*", 0)
+	
+	if !file_exists(working_directory + "custom/README.txt") {
+		var file = file_text_open_write(working_directory + "custom/README.txt")
+		
+			file_text_write_string(file,"any file in this folder that matches a sprite name will replace it!\nthe xorig and yorig values are the origin points of each image\nmost of the time these should match what you put in the json! (unless you're doing custom preview characters)\n")
+			file_text_writeln(file)
+		
+			for (var f = 0; f < 100000; f++) {
+				var fname = sprite_get_name(f)
+				if (string_char_at(fname, 1) == "<") break
+				file_text_write_string(file,$"{fname} | xorig: {sprite_get_xoffset(f)} // yorig: {sprite_get_yoffset(f)}")
+				file_text_writeln(file)
+			}
+		file_text_close(file)
+	}
+	
+	var file = file_find_first(working_directory + "custom/*", 0)
 
 	while (file != "") {
-		switch(asset_get_type(file)) {
-			default: case asset_unknown:
-				print(file,"invalid mod asset")
-				array_push(invalidfiles, file)
-			break
-			case asset_sprite:
-				sprite_replace(asset_get_index(file),1,0,false,false,0,0)
-			break
+		if file != "README.txt" and filename_ext(file) != ".json" {
+			var noext = filename_change_ext(file,"")
+			if !file_exists(working_directory + $"custom/{noext}.json") {
+				array_push(invalidfiles, "custom/"+file+" (has no json!)")
+			} 
+			else {
+				try {
+					var meta = json_parse(read_json(file_text_open_read(working_directory + $"custom/{noext}.json")))
+					switch(asset_get_type(noext)) {
+						default: case asset_unknown:
+							print(file,"invalid mod asset")
+							array_push(invalidfiles, "custom/"+file)
+						break
+						case asset_sprite:
+							sprite_replace(asset_get_index(noext),working_directory + $"custom/{file}",meta.frames,false,false,meta.xorig,meta.yorig)
+						break
+					}
+				}
+				catch(ex) {
+					print(file,"RED ALERT RED ALERT")
+					array_push(invalidfiles, "custom/"+file+$" {ex.message}")					
+				}
+			}
 		}
-		folder = file_find_next()
+		file = file_find_next()
 	}
 
 	file_find_close()

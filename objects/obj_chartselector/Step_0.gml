@@ -13,7 +13,7 @@ if !autosave_menu {
 	
 	if keyboard_check_pressed(vk_down) or mouse_wheel_down() {
 		sel++
-		if sel < array_length(charts) {
+		if sel < array_length(charts)-1 {
 			while string_starts_with(charts[sel], "---") {
 				sel++	
 			}
