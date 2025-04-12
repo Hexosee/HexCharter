@@ -1,5 +1,5 @@
 // might make this more mouse controlled another time idk
-
+if obj_persistent.warningup exit
 if !autosave_menu {
 
 	if keyboard_check_pressed(vk_up) or mouse_wheel_up() {

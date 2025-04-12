@@ -51,6 +51,10 @@ function set_theme(theme) {
 // untested and probably doesnt work yet
 // i'll do this tomorrow! (I PROMISE!)
 
+warningup = true
+buttonlatch = false
+invalidfiles = []
+
 /*
 if directory_exists(working_directory + "custom/") {
 	file = file_find_first(working_directory + "custom/*", 0)
@@ -59,6 +63,7 @@ if directory_exists(working_directory + "custom/") {
 		switch(asset_get_type(file)) {
 			default: case asset_unknown:
 				print(file,"invalid mod asset")
+				array_push(invalidfiles, file)
 			break
 			case asset_sprite:
 				sprite_replace(asset_get_index(file),1,0,false,false,0,0)
@@ -68,4 +73,8 @@ if directory_exists(working_directory + "custom/") {
 	}
 
 	file_find_close()
+	
+	if array_length(invalidfiles) > 0 {
+		warningup = true
+	}
 }
