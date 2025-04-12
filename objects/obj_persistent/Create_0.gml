@@ -50,6 +50,8 @@ function set_theme(theme) {
 
 // untested and probably doesnt work yet
 // i'll do this tomorrow! (I PROMISE!)
+
+/*
 if directory_exists(working_directory + "custom/") {
 	file = file_find_first(working_directory + "custom/*", 0)
 
