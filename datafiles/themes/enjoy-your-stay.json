@@ -1,0 +1,23 @@
+{
+    "name" : "enjoy your stay",
+    "author" : "jc\n(slightly modified by kayla)",
+
+    "col_bg" : [26,23,61],
+    "col_overlay" : [7,4,33],
+    
+    // light
+    "col_grid1" : [79,255,49],
+    "col_grid1_offbeat" : [58,145,53],
+
+    // offsection
+    "col_grid1_b" : [188,96,224],
+    "col_grid1_offbeat_b" : [147,92,165],
+
+    // dark
+    "col_grid2" : [46,165,46],
+    "col_grid2_offbeat" : [20,119,20],
+
+    // offsection
+    "col_grid2_b" : [125,45,196],
+    "col_grid2_offbeat_b" : [75,19,127]
+}

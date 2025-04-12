@@ -65,7 +65,9 @@ function draw_preview(theme) {
 	for(var col = 0; col <= 8; col++) {
 		var notex = notestartx
 		for(var row = 0; row < 8; row++) {
-			draw_set_color(((row+col) % 2 == 0) ? make_color_from_array(curr_theme.col_grid1) : make_color_from_array(curr_theme.col_grid2))
+			var onbeat = ((row+col) % 2 == 0) ? make_color_from_array(curr_theme.col_grid1) : make_color_from_array(curr_theme.col_grid2)
+			var offbeat = ((row+col) % 2 == 0) ? make_color_from_array(curr_theme.col_grid1_offbeat) : make_color_from_array(curr_theme.col_grid2_offbeat)
+			draw_set_color(floor((col)/4)%2 == 0 ? onbeat : offbeat)
 			draw_rectangle(notex, notey, notex+boxsize, notey+boxsize, false)
 			
 			if col == 0 {
