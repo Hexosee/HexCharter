@@ -4,15 +4,19 @@ if !autosave_menu {
 
 	if keyboard_check_pressed(vk_up) or mouse_wheel_up() {
 		sel--
-		while string_starts_with(charts[sel], "---") {
-			sel--	
+		if sel >= 0 {
+			while string_starts_with(charts[sel], "---") {
+				sel--	
+			}
 		}
 	}
 	
 	if keyboard_check_pressed(vk_down) or mouse_wheel_down() {
 		sel++
-		while string_starts_with(charts[sel], "---") {
-			sel++	
+		if sel < array_length(charts) {
+			while string_starts_with(charts[sel], "---") {
+				sel++	
+			}
 		}
 	}
 		
