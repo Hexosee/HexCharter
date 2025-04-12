@@ -52,6 +52,7 @@ function set_theme(theme) {
 // i'll do this tomorrow! (I PROMISE!)
 
 warningup = true
+warningup = false
 buttonlatch = false
 invalidfiles = []
 
