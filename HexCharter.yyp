@@ -49,8 +49,6 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"chart.swows","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"chart.swows","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"song.ogg","CopyToMask":-1,"filePath":"datafiles/charts/tutorial","name":"song.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"spr_chartselbg.json","CopyToMask":-1,"filePath":"datafiles/custom","name":"spr_chartselbg.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"spr_chartselbg.png","CopyToMask":-1,"filePath":"datafiles/custom","name":"spr_chartselbg.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"bright.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"bright.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"catpuccin-mocha.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"catpuccin-mocha.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"dark.json","CopyToMask":-1,"filePath":"datafiles/themes","name":"dark.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

@@ -9,3 +9,5 @@ pausy = false
 coolscore = 0
 misses = 0
 songpos = 0
+
+hitthisstep = [false,false,false,false]

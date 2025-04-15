@@ -1,5 +1,6 @@
 y=yy+(obj_playtest.y-(obj_uinotes.y))
 x=xx+obj_playtest.x
+obj_playtest.hitthisstep = [false,false,false,false]
 
     // note offscreen
 if obj_persistent.downscroll=false {
@@ -41,7 +42,8 @@ else {
     if (y <= obj_uinotes.y+(64) && y >= obj_uinotes.y-(64) && hitable=true) {
         switch(type) {
             case 1: case 2:
-                if keyboard_check_pressed(obj_persistent.bind[note-4]) {
+                if keyboard_check_pressed(obj_persistent.bind[note-4]) and not obj_playtest.hitthisstep[note-4] {
+					obj_playtest.hitthisstep[note-4] = true
 					with(obj_uinotes) {
 						if other.note == note {
 							press = true

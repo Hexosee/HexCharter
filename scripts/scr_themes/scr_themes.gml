@@ -5,7 +5,7 @@ function read_json(file)  {
 		var line = file_text_read_string(file);
 	
 		if (string_pos("//", line) == 0) {
-			json += line;
+			json += string_split(line, "//")[0];
 		}
 	
 		file_text_readln(file);
