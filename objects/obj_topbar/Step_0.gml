@@ -72,9 +72,78 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 			}
 		break
 		case 2: // edit
+			var cursection = abs((floor((obj_chartcontroller.y-1)/(obj_chartcontroller.mscroll*16)))+1) // stupid math ahhhh
+			print(cursection)
 			switch(curopt) {
-				case 0:
-					print((floor((obj_chartcontroller.y-1)/(obj_chartcontroller.mscroll*16))))
+				case 0: // copy last section
+					if cursection != 0 {
+						for (var j = 0; j < obj_chartcontroller.keys*2; j++) {
+							for (var i = 0; i < 16; i++) {
+								obj_chartcontroller.notes[j, (cursection)*16+i] = obj_chartcontroller.notes[j, (cursection-1)*16+i]
+							}
+						}
+					}
+					menuopen = noone
+					selected = -1
+				break
+				case 1: // swap section
+					var notecopy = []
+					// fuck my life
+					for (var j = 0; j < obj_chartcontroller.keys*2; j++)
+						for (var i = 0; i < 16; i++) 
+							notecopy[j, i] = obj_chartcontroller.notes[j, cursection*16+i]
+						
+					for (var j = 0; j < obj_chartcontroller.keys*2; j++) {
+						var modded = (j+obj_chartcontroller.keys)%((obj_chartcontroller.keys*2))
+						for (var i = 0; i < 16; i++)
+							obj_chartcontroller.notes[j, (cursection)*16+i] = notecopy[modded, i]
+					}	
+					menuopen = noone
+					selected = -1
+				break
+				case 2: // copy section
+					copiedsection = []
+					for (var j = 0; j < obj_chartcontroller.keys*2; j++)
+						for (var i = 0; i < 16; i++)
+							copiedsection[j, i] = obj_chartcontroller.notes[j, cursection*16+i]
+					
+					alert_make("Copied section!", false, 5)
+					menuopen = noone
+					selected = -1
+				break
+				case 3: // paste section
+					for (var j = 0; j < obj_chartcontroller.keys*2; j++)
+						for (var i = 0; i < 16; i++)
+							obj_chartcontroller.notes[j, cursection*16+i] = copiedsection[j, i]
+							
+					menuopen = noone
+					selected = -1
+				break
+				case 4: // autosave and clear
+					with obj_chartcontroller {
+						var now = date_current_datetime()
+						// IT'S AUTOSAVING TIME!
+						last_autosave_time = now
+		
+						// probably not necessary but who knows
+						var year =   date_get_year(now)
+						var month =  date_get_month(now)
+						var day =    date_get_day(now)
+						var hour =   date_get_hour(now)
+						var minute = date_get_minute(now)
+						var second = date_get_second(now)
+						chart_save_as($"{working_directory}charts/{filename}/autosaves/chart_autosave-{year}-{month}-{day}-{hour}-{minute}-{second}.swows")
+						alert_make("Autosaved chart!", false, 10)
+		
+						var bb,b
+						for (bb = 0; bb < (keys * 2); bb++)
+						{
+							for (b = 0; b < songlong; b++)
+							    notes[bb, b] = 0;
+						}
+					}
+					menuopen = noone
+					selected = -1
 				break
 			}
 		break

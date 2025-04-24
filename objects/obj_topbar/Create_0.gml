@@ -11,7 +11,7 @@ barstruct = { // dude fuck gamemaker
 	B_Help : ["Documentation"],
 	//Edit : ["Undo","Redo"],
 	//View : ["sorry nothing"]
-	C_Edit : ["Copy Last Section"],
+	C_Edit : ["Copy Last Section", "Swap Section", "Copy Section", "Paste Section", "Clear Chart (Autosaves)"],
 	
 	D_Tools : ["Toggle Metronome", "Toggle Hitsounds"]
 }
@@ -41,3 +41,5 @@ width = 0
 
 curcat = 0
 curopt = 0
+
+copiedsection = []
