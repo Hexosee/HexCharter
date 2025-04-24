@@ -77,7 +77,7 @@ else {
 }
 
 if keyboard_check_pressed(vk_f12) { 
-	if sel != 0 {
+	if sel > 1 {
 		obj_persistent.playtest_chart = charts[sel]
 		transition_goto(rm_playtesting)	
 	}
