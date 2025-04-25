@@ -29,6 +29,7 @@ customtype = 11 // dont go into the normal notes !!
 
 zoom = 1
 zlerp = 1
+lockbb = false
 
 // my realm... where the variables for MY features go..
 

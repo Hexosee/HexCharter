@@ -19,13 +19,28 @@ surface_set_target(surf)
 			var start = 48
 			if obj_persistent.downscroll start = 352
 	        switch(type) {
-	            case 1: case 2: //regular notes
+	            case 1: //regular notes
 	                draw_sprite_ext(spr_p_notes,note,x*2,y*2,2,2,0,image_blend,image_alpha)
+	            break;
+	            case 2: //alt notes
+	                draw_sprite_ext(spr_p_uinotes,note,x*2,y*2,2,2,0,c_blue,image_alpha)
 	            break;
 	            case 3: //bombs
 	                draw_sprite_ext(spr_p_bombs,note,x*2,y*2,2,2,0,c_white,image_alpha)
 	            break;
-	            case 8: case 9: //hold
+				case 4: // dudecam
+					draw_sprite_ext(spr_special,1,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
+				break
+				case 5: // enemy cam
+					draw_sprite_ext(spr_special,3,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
+				break
+				case 6: // middle cam
+					draw_sprite_ext(spr_special,2,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
+				break
+				case 7:
+					draw_sprite_ext(spr_special,0,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
+				break
+	            case 8:
 	                var obama=obj_playtest.notespeed
 	                if place_free(x,y-(obama*image_yscale)-48*obama) { //top note cap
 	                    draw_sprite_ext(spr_p_holdcap,note,x*2,((y)-48*(obama*2))*2+0+obama*(48*obama)+obama*2,-2,-2,0,c_white,image_alpha)
@@ -34,6 +49,16 @@ surface_set_target(surf)
 	                    draw_sprite_ext(spr_p_holdcap,note,x*2,((y)+48*(obama*2))*2+0-obama*(48*obama)-obama*2,2,2,0,c_white,image_alpha)
 	                }
 	                draw_sprite_ext(spr_p_holds,note,x*2,(y-(obj_playtest.notespeed*image_yscale))*2,2,(image_yscale*(obj_playtest.notespeed*2))*2,0,image_blend,image_alpha)
+	            break;
+	            case 9:
+	                var obama=obj_playtest.notespeed
+	                if place_free(x,y-(obama*image_yscale)-48*obama) { //top note cap
+	                    draw_sprite_ext(spr_p_holdcapalt,note,x*2,((y)-48*(obama*2))*2+0+obama*(48*obama)+obama*2,-2,-2,0,c_blue,image_alpha)
+	                }
+	                if place_free(x,y+(obama*image_yscale)+48*obama) {  //bottom note cap
+	                    draw_sprite_ext(spr_p_holdcapalt,note,x*2,((y)+48*(obama*2))*2+0-obama*(48*obama)-obama*2,2,2,0,c_blue,image_alpha)
+	                }
+	                draw_sprite_ext(spr_p_holdsalt,note,x*2,(y-(obj_playtest.notespeed*image_yscale))*2,2,(image_yscale*(obj_playtest.notespeed*2))*2,0,c_blue,image_alpha)
 	            break;
 	            case 10: //event notes
 	                draw_sprite_ext(spr_special,4,x*2-32,y*2-32,2,2,0,c_white,1)

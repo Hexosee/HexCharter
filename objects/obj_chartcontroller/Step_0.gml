@@ -136,18 +136,18 @@ else {
 				var pitch = 1
 				if this_note == 1 or this_note == 2 or this_note == 8 or this_note == 9 or this_note == 7 or this_note == 3 {
 					if bb >= keys {
-						if true { // too lazy to adjust the indentation... yawn!
-							// its a duuuude note
-							var this_anim = prevdude.anims[bb%4]
-							if this_note == 2 or this_note == 9 this_anim = prevdude.alt_anims[bb%4]
-							if this_note == 3 this_anim = prevdude.bomb_anims[bb%4]
-							if this_note == 7 this_anim = prevdude.ayy_anim
-							prevdude.cur_anim = this_anim
-							prevdude.image_index = 0
-							if this_note != 7 and not array_contains(prevdude.bomb_anims,this_anim) prevdude.image_blend = notecollist[bb%4]
-							else prevdude.image_blend = c_white
-							pitch = 1.25
-						}
+						// hit shift + tab pal.
+						
+						// its a duuuude note
+						var this_anim = prevdude.anims[bb%4]
+						if this_note == 2 or this_note == 9 this_anim = prevdude.alt_anims[bb%4]
+						if this_note == 3 this_anim = prevdude.bomb_anims[bb%4]
+						if this_note == 7 this_anim = prevdude.ayy_anim
+						prevdude.cur_anim = this_anim
+						prevdude.image_index = 0
+						if this_note != 7 and not array_contains(prevdude.bomb_anims,this_anim) prevdude.image_blend = notecollist[bb%4]
+						else prevdude.image_blend = c_white
+						pitch = 1.25
 					} else {
 						// its a baaaadguy note
 						var this_anim = prevbadguy.anims[bb%4]
@@ -189,10 +189,12 @@ curb = floor(((mouse_y-y))/32)-3
 
 // this feels really dumb to do but it works so i'm not complaining
 
-curbb = ((mouse_x)/32)-center/32
-if curbb >= keys
-	curbb-=0.32
-curbb=floor(curbb)
+if not lockbb {
+	curbb = ((mouse_x)/32)-center/32
+	if curbb >= keys
+		curbb-=0.32
+	curbb=floor(curbb)
+}
 
 // charting COMMENCE
 
@@ -204,7 +206,9 @@ if !(curbb < 0 or curbb >= keys*2) and !(curb < 0 or curb > songlong) {
 			notes[curbb,curb] = curtype
 	}
 	
-	if mouse_check_button_pressed(mb_middle) {
+	lockbb = mouse_check_button(mb_middle)
+	
+	if lockbb {
 		if curtype == 2
 			notes[curbb,curb] = 9
 		else

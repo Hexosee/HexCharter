@@ -24,17 +24,28 @@ if note < 4 { //enemy
 	fuckup = obj_persistent.downscroll ? 0 : 100
 	fuckdown = obj_persistent.downscroll ? 100 : 0
 
-	if y <= obj_uinotes.y+8+fuckdown && y >= obj_uinotes.y-8-fuckup { //14
+	if y <= obj_uinotes.y+64+fuckdown && y >= obj_uinotes.y-64-fuckup { //14
 	    switch(type) {
-	        case 1: case 2: case 8: case 9:
+	        case 1: case 2:
+				if (y <= obj_uinotes.y+(8)+fuckdown && y >= obj_uinotes.y-(8)-fuckup) {
+					with(obj_uinotes) {
+						if other.note == note {
+							press = true
+							alarm[0] = 2/(60/game_get_speed(gamespeed_fps))
+						}
+					}
+			        instance_destroy()
+				}
+	        break
+			case 8: case 9:
 				with(obj_uinotes) {
 					if other.note == note {
 						press = true
 						alarm[0] = 2/(60/game_get_speed(gamespeed_fps))
 					}
 				}
-	            instance_destroy()
-	        break
+			    instance_destroy()
+			break
 	    }
 	}
 }
@@ -54,14 +65,10 @@ else {
                 }
             break
             case 8: case 9:
-			
-				if (y <= obj_uinotes.y+(32) && y >= obj_uinotes.y-(32) && hitable=true) {
-			
 	                if keyboard_check(obj_persistent.bind[note-4]) {
 	                    obj_playtest.coolscore+=25
 	                    instance_destroy();
 	                }
-				}
             break
         }
     }
