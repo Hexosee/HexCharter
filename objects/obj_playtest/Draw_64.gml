@@ -31,7 +31,7 @@ surface_set_target(surf)
 				case 4: // dudecam
 					draw_sprite_ext(spr_special,1,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
 				break
-				case 5: // mid cam
+				case 5: // bad cam
 					draw_sprite_ext(spr_special,2,x*2-32,y*2-32,2,2,0,c_white,image_alpha)
 				break
 				case 6: // middle cam

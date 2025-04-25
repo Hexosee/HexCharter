@@ -6,7 +6,7 @@ curb = 0
 
 curtype = 1
 
-notelist = [[spr_notes,2,"Normal Note"],[spr_notes,1,"Alt Note"],[spr_bombs,1,"Bomb Note"],[spr_special,1,"Camera Pan (PLAYER)"],[spr_special,2,"Camera Pan (MIDDLE)"],[spr_special,3,"Camera Pan (BADGUY)"],[spr_special,0,"Ayy Note"],[spr_special,4,"Event Note"],[spr_special,5,"Custom Note"]]
+notelist = [[spr_notes,2,"Normal Note"],[spr_notes,1,"Alt Note"],[spr_bombs,1,"Bomb Note"],[spr_special,1,"Camera Pan (PLAYER)"],[spr_special,2,"Camera Pan (BADGUY)"],[spr_special,3,"Camera Pan (MIDDLE)"],[spr_special,0,"Ayy Note"],[spr_special,4,"Event Note"],[spr_special,5,"Custom Note"]]
 notecollist = [c_purple, c_blue, c_green, c_red]
 
 //show_debug_overlay(true)
