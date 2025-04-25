@@ -30,7 +30,7 @@ if note < 4 { //enemy
 				with(obj_uinotes) {
 					if other.note == note {
 						press = true
-						alarm[0] = 3/(60/game_get_speed(gamespeed_fps))
+						alarm[0] = 2/(60/game_get_speed(gamespeed_fps))
 					}
 				}
 	            instance_destroy()
@@ -44,21 +44,24 @@ else {
             case 1: case 2:
                 if keyboard_check_pressed(obj_persistent.bind[note-4]) and not obj_playtest.hitthisstep[note-4] {
 					obj_playtest.hitthisstep[note-4] = true
-					with(obj_uinotes) {
-						if other.note == note {
-							press = true
-							alarm[0] = 3/(60/game_get_speed(gamespeed_fps))
+                    obj_playtest.coolscore+=100
+					with (obj_uinotes) {
+						if note == other.note {
+							hit[note-3] = true	
 						}
 					}
-                    obj_playtest.coolscore+=100
                     instance_destroy();
                 }
             break
             case 8: case 9:
-                if keyboard_check(obj_persistent.bind[note-4]) {
-                    obj_playtest.coolscore+=25
-                    instance_destroy();
-                }
+			
+				if (y <= obj_uinotes.y+(32) && y >= obj_uinotes.y-(32) && hitable=true) {
+			
+	                if keyboard_check(obj_persistent.bind[note-4]) {
+	                    obj_playtest.coolscore+=25
+	                    instance_destroy();
+	                }
+				}
             break
         }
     }
