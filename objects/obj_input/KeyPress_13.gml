@@ -2,6 +2,6 @@
 // i really hope not
 
 with(obj_topbar) {
-	func(keyboard_string)
+	other.func(keyboard_string)
 }
 instance_destroy()
