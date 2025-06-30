@@ -5,7 +5,7 @@ on:
   workflow_dispatch: #This line allows you to run the workflow manually from the GitHub Actions page
   workflow_call: #This line allows you to run the workflow from another workflow
 jobs:
-  build:
+  build-yyc:
     runs-on: windows-2022
     steps:
       # Check out the repository with the GameMaker project
@@ -21,7 +21,7 @@ jobs:
           "yyp-path=$yyp" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
       # This step sets up the GameMaker build CLI tool Igor https://github.com/bscotch/igor-setup
       - name: use Igor Setup
-        uses: bscotch/igor-setup@v1
+        uses: bscotch/igor-setup@v3
         id: igor
         with:
           target-yyp: ${{ steps.find_yyp.outputs.yyp-path }}
@@ -31,7 +31,7 @@ jobs:
         uses: bscotch/igor-build@v1
         id: build
         with:
-          yyc: false
+          yyc: true
           yyp-path: ${{ steps.find_yyp.outputs.yyp-path }}
           user-dir: ${{ steps.igor.outputs.user-dir }}
       # This step uploads the build to the artifacts, so you can download it from the GitHub Actions page or use it in another workflow
