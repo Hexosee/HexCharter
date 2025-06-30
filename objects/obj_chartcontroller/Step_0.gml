@@ -17,7 +17,7 @@ if livemode {
 	}
 }
 	
-if keyboard_check_pressed(vk_space) {
+if keyboard_check_pressed(vk_space) and not instance_exists(obj_input) {
 	if paused {
 		paused = false
 		curr_cam_targ = 2
@@ -50,20 +50,20 @@ else
 
 var mx = floor(mouse_x/35)
 if paused {
-	if (is_scrolling_down() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))  and not instance_exists(obj_input)
 		y-=s
 	
-	if (is_scrolling_up() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_up() or keyboard_check_pressed(vk_up)) and not ((mx > 5 and mx < 325) and (mouse_y > 675 and mouse_y < 715))  and not instance_exists(obj_input)
 		y+=s
 		
-	if keyboard_check_pressed(ord("D")) 
+	if keyboard_check_pressed(ord("D")) and not instance_exists(obj_input)
 		y = (floor((y-1)/(s*16))) * (s*16)
 		
-	if keyboard_check_pressed(ord("A")) 
+	if keyboard_check_pressed(ord("A")) and not instance_exists(obj_input)
 		y = (ceil((y+1)/(s*16))) * (s*16)
 }
 else
-	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or (keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D")) and not livemode) ) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or (keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D")) and not livemode) ) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715)) and not instance_exists(obj_input)
 	{ 
 		audio_pause_sound(songplaying);
 		paused = true;
@@ -184,7 +184,7 @@ else {
 var num	
 for (num = 0; num <= 9; num++)
 {
-    if (keyboard_check_pressed(ord(num))) {
+    if (keyboard_check_pressed(ord(num))) and not instance_exists(obj_input) {
         audio_sound_set_track_position(songplaying, num * 0.1 * audio_sound_length(songplaying))
 		if !paused
 			y = -((audio_sound_get_track_position(songplaying) / 60) * bpm * 4) * 32
@@ -197,7 +197,6 @@ for (num = 0; num <= 9; num++)
 
 y=min(y,0)
 receptor_y = round((-y+0.5)/32)
-print(receptor_y)
 
 curb = floor(((mouse_y-y))/32)-3
 
@@ -212,7 +211,7 @@ if not lockbb {
 
 // charting COMMENCE
 
-if !(curbb < 0 or curbb >= keys*2) and !(curb < 0 or curb > songlong) {
+if !(curbb < 0 or curbb >= keys*2) and !(curb < 0 or curb > songlong) and not instance_exists(obj_input) {
 	if mouse_check_button_pressed(mb_left) {
 		if curtype == -1 
 			notes[curbb,curb] = customtype

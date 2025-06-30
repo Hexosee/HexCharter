@@ -76,15 +76,24 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 			print(cursection)
 			switch(curopt) {
 				case 0: // copy last section
-					if cursection != 0 {
-						for (var j = 0; j < obj_chartcontroller.keys*2; j++) {
-							for (var i = 0; i < 16; i++) {
-								obj_chartcontroller.notes[j, (cursection)*16+i] = obj_chartcontroller.notes[j, (cursection-1)*16+i]
+					input("Section offset?",function(num) {
+						try {
+							num = round(real(num)) // juust incase you stink
+						}
+						catch(_ex) {
+							alert_make("thats no number..")	
+						}
+						var cursection = abs((floor((obj_chartcontroller.y-1)/(obj_chartcontroller.mscroll*16)))+1)
+						if cursection != 0 {
+							for (var j = 0; j < obj_chartcontroller.keys*2; j++) {
+								for (var i = 0; i < 16; i++) {
+									obj_chartcontroller.notes[j, (cursection)*16+i] = obj_chartcontroller.notes[j, (cursection-num)*16+i]
+								}
 							}
 						}
-					}
-					menuopen = noone
-					selected = -1
+						menuopen = noone
+						selected = -1
+					})
 				break
 				case 1: // swap section
 					var notecopy = []

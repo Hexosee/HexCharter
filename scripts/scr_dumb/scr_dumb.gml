@@ -20,6 +20,12 @@ function alert_make(str, play_sound = true, alert_time = 30) {
 	obj.num = instance_number(obj_alert)-1
 }
 
+function input(str,func) {
+	var obj = instance_create_depth(0,0,0,obj_input)	
+	obj.str = str
+	obj.func = func
+}
+
 function is_scrolling_down() {
 	if !keyboard_check(vk_control)
 		return mouse_wheel_down()
