@@ -5,6 +5,18 @@ else
 	s = mscroll	
 		
 	
+if livemode {
+	var i
+	for (i=0;i<4;i++) {
+		if keyboard_check_pressed(obj_persistent.bind[i]) {
+			if curtype == -1 
+				notes[i,receptor_y] = customtype
+			else
+				notes[i,receptor_y] = curtype
+		}
+	}
+}
+	
 if keyboard_check_pressed(vk_space) {
 	if paused {
 		paused = false
@@ -51,7 +63,7 @@ if paused {
 		y = (ceil((y+1)/(s*16))) * (s*16)
 }
 else
-	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D"))) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
+	if (is_scrolling_down() or keyboard_check_pressed(vk_down) or is_scrolling_up() or keyboard_check_pressed(vk_up) or (keyboard_check_pressed(ord("A")) or keyboard_check_pressed(ord("D")) and not livemode) ) and not ((mx > 5 and mx < 320+5) and (mouse_y > 675 and mouse_y < 715))
 	{ 
 		audio_pause_sound(songplaying);
 		paused = true;
@@ -184,6 +196,8 @@ for (num = 0; num <= 9; num++)
 //y=-clamp(-y,0,infinity)
 
 y=min(y,0)
+receptor_y = round((-y+0.5)/32)
+print(receptor_y)
 
 curb = floor(((mouse_y-y))/32)-3
 

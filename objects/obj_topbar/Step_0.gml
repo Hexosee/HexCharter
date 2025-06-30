@@ -163,6 +163,13 @@ if inrange2 and mouse_check_button_pressed(mb_left) {
 					menuopen = noone
 					selected = -1
 				break
+				case 2:
+					obj_chartcontroller.livemode = !obj_chartcontroller.livemode
+					var status = (obj_chartcontroller.livemode) ? "on" : "off"
+					alert_make("Live mode now set to " + status, false, 10)
+					menuopen = noone
+					selected = -1
+				break
 			}
 		break
 	}

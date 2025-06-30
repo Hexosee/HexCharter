@@ -31,6 +31,9 @@ zoom = 1
 zlerp = 1
 lockbb = false
 
+receptor_y = 0
+livemode = false
+
 // my realm... where the variables for MY features go..
 
 last_autosave_time = date_current_datetime() // it doesnt actually autosave here... just makes it more convenient later

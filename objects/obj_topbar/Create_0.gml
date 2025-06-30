@@ -13,7 +13,7 @@ barstruct = { // dude fuck gamemaker
 	//View : ["sorry nothing"]
 	C_Edit : ["Copy Last Section", "Swap Section", "Copy Section", "Paste Section", "Clear Chart (Autosaves)"],
 	
-	D_Tools : ["Toggle Metronome", "Toggle Hitsounds"]
+	D_Tools : ["Toggle Metronome", "Toggle Hitsounds","Toggle Live Mode"]
 }
 
 keys = ["File","Help","Edit","Tools"]
