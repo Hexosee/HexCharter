@@ -1,5 +1,5 @@
 # thank you gamemaker :praying_hands:
-name: automatic charter build
+name: automatic charter build (YYC)
 on: 
   push: #Uncomment this line to run the workflow on push
   workflow_dispatch: #This line allows you to run the workflow manually from the GitHub Actions page
